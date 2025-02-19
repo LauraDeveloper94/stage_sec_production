@@ -1,0 +1,22 @@
+- label: Módulo de Producción
+  items:
+    - id: nombre_modulo
+      name: Nombre del módulo
+    - id: descripcion
+      name: Descripción corta
+    - id: funcionalidades
+      name: Descripción detallada de funcionalidades
+    - id: mapa_modulo
+      name: Mapa del módulo
+    - id: dependencias
+      name: Dependencias de otros módulos
+    - id: wireframes
+      name: Wireframes de las páginas a mostrar
+    - id: permisos
+      name: Control de accesos
+    - id: diagramas_flujo
+      name: Diagramas de flujo funcionales
+    - id: eentidad_relacion
+      name: Esquema relacional
+    - id: comunicacion_modulos
+      name: Comunicación con otros módulos
