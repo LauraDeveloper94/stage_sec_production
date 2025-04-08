@@ -6,7 +6,7 @@ class Department(models.Model):
     _name = 'stage_sec.department'
     _description = 'Department'
     
-	department_name = fields.Char(string = "Department name", required=True)
+    department_name = fields.Char(string = "Department name", required=True)
     department_location = fields.Char(string = "Location", required=True)
     department_description = fields.Char(string ="Department description", required=True)
     number_employees = fields.Char(string = "Number of employees", required=True)
