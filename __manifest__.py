@@ -1,23 +1,21 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "stage_sec_production",
+    'name': "StageSec Production Module",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "Module to manage and automate StageSec's production",
 
     'description': """
-        Long description of module's purpose
+        This module helps StageSec manage production orders, schedule manufacturing tasks, and control inventory, machinery, and employees.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Laura Nácher",
+    'website': "http://www.stagesec.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Manufacturing',
+    'version': '0.1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -32,4 +30,9 @@
     'demo': [
         'demo/demo.xml',
     ],
+
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+    'license': 'LGPL-3',
 }
