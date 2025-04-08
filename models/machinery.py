@@ -6,7 +6,7 @@ class Machinery(models.Model):
     _name = 'stage_sec.machinery'
     _description = 'Machinery'
     
-	machinery_name = fields.Char(string= "Machinery name", required=True)
+	machinery_name = fields.Char(string = "Machinery name", required=True)
     machinery_location = fields.Char(string = "Machinery location", required=True)
     machinery_type = fields.Char(string= "Machinery type", required=True)
     machinery_status = fields.Char(string = "Machinery status", required=True) 
