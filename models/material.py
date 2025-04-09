@@ -6,7 +6,7 @@ class Material(models.Model):
     _name = 'stage_sec.material'
     _description = 'Material'
     
-	material_name = fields.Char(string="Material", required=True)
+    material_name = fields.Char(string="Material", required=True)
     material_type = fields.Char(string="Type of material", required=True)
     price = fields.Float(string = "Price of the material", required=True)
     dimensions = fields.Float(string = "Dimensions of the material", required=True)
