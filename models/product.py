@@ -6,7 +6,7 @@ class Product(models.Model):
     _name = 'stage_sec.product'
     _description = 'Product'
     
-	product_name = fields.Char(string="Product name", required=True)
+    product_name = fields.Char(string="Product name", required=True)
     product_description = fields.Char(string="Product description", required=True)
     price = fields.Float(string = "Price of the product", required=True)
     dimensions = fields.Float(string = "Dimensions of the product", required=True)
