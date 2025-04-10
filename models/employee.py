@@ -1,5 +1,7 @@
 # -*- coding: utf -8 -*-
 
+from odoo import models, fields, api
+
 class Employee(models.Model):
     
     _name = 'stage_sec.employee'
