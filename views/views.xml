@@ -49,12 +49,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="stage_sec_production.action_maquinaria">
-      <field name="name">Maquinaria</field>
-      <field name="res_model">stage_sec_production.machinery</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
     <record model="ir.actions.act_window" id="stage_sec_production.action_manufacturado">
       <field name="name">Manufacturado</field>
       <field name="res_model">stage_sec_production.manufacturing</field>
@@ -79,6 +73,12 @@
     <record model="ir.actions.act_window" id="stage_sec_production.action_empleados">
       <field name="name">Empleados</field>
       <field name="res_model">stage_sec_production.employee</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="stage_sec_production.action_maquinaria">
+      <field name="name">Maquinaria</field>
+      <field name="res_model">stage_sec_production.machinery</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -116,9 +116,9 @@
               action="stage_sec_production.action_ordenes"/>-->
     <menuitem name="Empleados" id="stage_sec_production.menu_empleados" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_empleados"/>
-<!--     <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
+    <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_maquinaria"/>
-    <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
+    <!--<menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_manufacturado"/>
     <menuitem name="Gestión de recursos, maquinaria y empleados" id="stage_sec_production.menu_gestion_recursos" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_gestion_recursos"/>
