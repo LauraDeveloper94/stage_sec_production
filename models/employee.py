@@ -4,18 +4,18 @@ from odoo import models, fields, api
 
 class Employee(models.Model):
     
-    _name = 'stage_sec.employee'
+    _name = 'stage_sec_production.employee'
     _description = 'Employee'
     
     id_number = fields.Char(string="ID number", required=True)
-    employee_name = fields.Char(string="Employee name", required=True)
+    name = fields.Char(string="Employee name", required=True)
     email = fields.Char(string="Email", required=True)
     surname1 = fields.Char(string = "First surname", required=True)
     surname2 = fields.Char(string = "Second surname")
     phone_number = fields.Char(string = "Phone number")
-    employee_type = fields.Selection(
+    type = fields.Selection(
         [('factory_worker', 'Factory_worker'), ('engineer', 'Engineer')],
         string="Type of employee", required=True
     )
-    employee_address = fields.Char(string = "Employee address", required=True)
+    address = fields.Char(string = "Employee address", required=True)
     position = fields.Char(string = "Employee position", required=True)

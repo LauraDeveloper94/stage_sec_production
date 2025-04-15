@@ -11,5 +11,5 @@ from . import inventory
 from . import quality_control
 from . import machinery
 from . import department
-from . import section
-from . import employee"""
+from . import section"""
+from . import employee
