@@ -43,11 +43,11 @@
 
     <!-- actions opening views on models  -->
     
-     <!-- <record model="ir.actions.act_window" id="stage_sec_production.action_ordenes">
+    <record model="ir.actions.act_window" id="stage_sec_production.action_ordenes">
       <field name="name">Órdenes de Producción</field>
       <field name="res_model">stage_sec_production.production_order</field>
       <field name="view_mode">tree,form</field>
-    </record>-->
+    </record>
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_control_calidad">
       <field name="name">Control de Calidad</field>
@@ -109,8 +109,8 @@
 
 
     <!-- actions --> 
-    <!--<menuitem name="Órdenes de producción" id="stage_sec_production.menu_ordenes_produccion" parent="stage_sec_production.menu_operaciones"
-              action="stage_sec_production.action_ordenes"/>-->
+    <menuitem name="Órdenes de producción" id="stage_sec_production.menu_ordenes_produccion" parent="stage_sec_production.menu_operaciones"
+              action="stage_sec_production.action_ordenes"/>
     <menuitem name="Empleados" id="stage_sec_production.menu_empleados" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_empleados"/>
     <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
@@ -121,8 +121,6 @@
               action="stage_sec_production.action_gestion_recursos"/> -->
     <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec_production.menu_informes"
               action="stage_sec_production.action_control_calidad"/>  
-
-
      <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_operaciones"
               action="stage_sec_production.action_clientes"/>
   </data>

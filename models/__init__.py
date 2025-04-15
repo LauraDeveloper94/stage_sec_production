@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import client
-""" from . import production_order
+"""
 from . import order
 from . import product
 from . import material
@@ -13,3 +13,4 @@ from . import manufacturing
 from . import machinery
 from . import employee
 from . import quality_control
+from . import production_order
