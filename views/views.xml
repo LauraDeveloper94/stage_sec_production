@@ -1,28 +1,86 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
+    <!-- explicit list view definition 
+
     <record model="ir.ui.view" id="stage_sec_production.list">
       <field name="name">stage_sec_production list</field>
       <field name="model">stage_sec_production.stage_sec_production</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+        <field name="client_name"/>
+        <field name="email"/>
+        <field name="surname1"/>
+        <field name="surname2"/>
+        <field name="phone_number"/>
+        <field name="client_type"/>
+        <field name="client_address"/>
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="stage_sec_production.action_window">
-      <field name="name">stage_sec_production window</field>
-      <field name="res_model">stage_sec_production.stage_sec_production</field>
+    -->
+
+    <!-- form view
+    <record id="view_form_client" model="ir.ui.view">
+      <field name="name">stage_sec.client.form</field>
+      <field name="model">stage_sec.client</field>
+      <field name="arch" type="xml">
+        <form string="Client">
+          <group>
+            <field name="client_name"/>
+            <field name="surname1"/>
+            <field name="surname2"/>
+            <field name="email"/>
+            <field name="phone_number"/>
+            <field name="client_type"/>
+            <field name="client_address"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    -->
+
+    <!-- actions opening views on models  -->
+    
+     <!-- <record model="ir.actions.act_window" id="stage_sec_production.action_ordenes">
+      <field name="name">Órdenes de Producción</field>
+      <field name="res_model">stage_sec_production.production_order</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
+    <record model="ir.actions.act_window" id="stage_sec_production.action_empleados">
+      <field name="name">Empleados</field>
+      <field name="res_model">stage_sec_production.employee</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="stage_sec_production.action_maquinaria">
+      <field name="name">Maquinaria</field>
+      <field name="res_model">stage_sec_production.machinery</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="stage_sec_production.action_manufacturado">
+      <field name="name">Manufacturado</field>
+      <field name="res_model">stage_sec_production.manufacturing</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="stage_sec_production.action_control_calidad">
+      <field name="name">Control de Calidad</field>
+      <field name="res_model">stage_sec_production.quality_control</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+
+
+
+
+    <record model="ir.actions.act_window" id="stage_sec_production.action_clientes">
+      <field name="name">Clientes</field>
+      <field name="res_model">stage_sec_production.client</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +99,34 @@
 -->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="stage_sec_production" id="stage_sec_production.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="stage_sec_production.menu_1" parent="stage_sec_production.menu_root"/>
-    <menuitem name="Menu 2" id="stage_sec_production.menu_2" parent="stage_sec_production.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="stage_sec_production.menu_1_list" parent="stage_sec_production.menu_1"
-              action="stage_sec_production.action_window"/>
-    <menuitem name="Server to list" id="stage_sec_production" parent="stage_sec_production.menu_2"
-              action="stage_sec_production.action_server"/>
--->
+
+    <menuitem name="Manufacturing StageSec" id="stage_sec_production.menu_root"/>
+
+    <!-- menu categories --> 
+
+    <menuitem name="Productos" id="stage_sec_production.menu_productos" parent="stage_sec_production.menu_root"/>
+    <menuitem name="Operaciones" id="stage_sec_production.menu_operaciones" parent="stage_sec_production.menu_root"/>
+    <menuitem name="Planificación" id="stage_sec_production.menu_planificacion" parent="stage_sec_production.menu_root"/>
+    <menuitem name="Informes" id="stage_sec_production.menu_informes" parent="stage_sec_production.menu_root"/>
+    <menuitem name="Configuración" id="stage_sec_production.menu_configuracion" parent="stage_sec_production.menu_root"/>
+
+
+    <!-- actions --> 
+    <!--<menuitem name="Órdenes de producción" id="stage_sec_production.menu_ordenes_produccion" parent="stage_sec_production.menu_operaciones"
+              action="stage_sec_production.action_ordenes"/>
+    <menuitem name="Empleados" id="stage_sec_production.menu_empleados" parent="stage_sec_production.menu_planificacion"
+              action="stage_sec_production.action_empleados"/>
+    <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
+              action="stage_sec_production.action_maquinaria"/>
+    <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
+              action="stage_sec_production.action_manufacturado"/>
+    <menuitem name="Gestión de recursos, maquinaria y empleados" id="stage_sec_production.menu_gestion_recursos" parent="stage_sec_production.menu_planificacion"
+              action="stage_sec_production.action_gestion_recursos"/>
+    <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec.menu_production_informes"
+              action="stage_sec_production.action_control_calidad"/>--> 
+
+
+     <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_operaciones"
+              action="stage_sec_production.action_clientes"/>
   </data>
 </odoo>
