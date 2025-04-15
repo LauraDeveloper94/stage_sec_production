@@ -2,7 +2,6 @@
 
 from . import client
 """
-from . import department
 from . import section"""
 from . import manufacturing
 from . import machinery
@@ -14,3 +13,4 @@ from . import order
 from . import product
 from . import material
 from . import inventory
+from . import department

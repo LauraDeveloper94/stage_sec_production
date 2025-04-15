@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Department(models.Model):
     
-    _name = 'stage_sec.department'
+    _name = 'stage_sec_production.department'
     _description = 'Department'
     
     department_name = fields.Char(string = "Department name", required=True)
