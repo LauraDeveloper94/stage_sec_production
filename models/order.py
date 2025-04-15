@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class Order(models.Model):
     
-    _name = 'stage_sec.order'
+    _name = 'stage_sec_production.order'
     _description = 'Order'
     
     order_date = fields.Date(string="Order date", required=True)

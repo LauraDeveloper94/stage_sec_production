@@ -85,6 +85,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="stage_sec_production.action_pedido">
+      <field name="name">Pedido</field>
+      <field name="res_model">stage_sec_production.order</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- server action to the one above -->
 <!--
     <record model="ir.actions.server" id="stage_sec_production.action_server">
@@ -130,7 +136,9 @@
               action="stage_sec_production.action_gestion_recursos"/>  -->
     <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec_production.menu_informes"
               action="stage_sec_production.action_control_calidad"/>  
-     <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_relaciones_comerciales"
+    <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_relaciones_comerciales"
               action="stage_sec_production.action_clientes"/>
+    <menuitem name="Pedidos" id="stage_sec_production.menu_pedidos" parent="stage_sec_production.menu_operaciones"
+              action="stage_sec_production.action_pedido"/>
   </data>
 </odoo>
