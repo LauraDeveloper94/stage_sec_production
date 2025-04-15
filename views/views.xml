@@ -115,6 +115,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="stage_sec_production.action_secciones">
+      <field name="name">Secciones</field>
+      <field name="res_model">stage_sec_production.section</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- server action to the one above -->
 <!--
     <record model="ir.actions.server" id="stage_sec_production.action_server">
@@ -172,5 +178,7 @@
               action="stage_sec_production.action_inventario"/>
     <menuitem name="Departamentos" id="stage_sec_production.menu_departamentos" parent="stage_sec_production.menu_estructura"
               action="stage_sec_production.action_departamentos"/>
+    <menuitem name="Secciones" id="stage_sec_production.menu_secciones" parent="stage_sec_production.menu_estructura"
+              action="stage_sec_production.action_secciones"/>
   </data>
 </odoo>

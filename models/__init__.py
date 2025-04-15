@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import client
-"""
-from . import section"""
+from . import section
 from . import manufacturing
 from . import machinery
 from . import employee
