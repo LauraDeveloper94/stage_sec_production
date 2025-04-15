@@ -7,9 +7,9 @@ from . import product
 from . import material
 from . import supplier
 from . import inventory
-from . import quality_control
 from . import department
 from . import section"""
 from . import manufacturing
 from . import machinery
 from . import employee
+from . import quality_control

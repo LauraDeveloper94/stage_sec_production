@@ -47,16 +47,13 @@
       <field name="name">Órdenes de Producción</field>
       <field name="res_model">stage_sec_production.production_order</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record>-->
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_control_calidad">
       <field name="name">Control de Calidad</field>
       <field name="res_model">stage_sec_production.quality_control</field>
       <field name="view_mode">tree,form</field>
-    </record> -->
-
-
-
+    </record> 
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_clientes">
       <field name="name">Clientes</field>
@@ -119,11 +116,11 @@
     <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_maquinaria"/>
     <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_manufacturado"/><!--
-    <menuitem name="Gestión de recursos, maquinaria y empleados" id="stage_sec_production.menu_gestion_recursos" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_gestion_recursos"/>
-    <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec.menu_production_informes"
-              action="stage_sec_production.action_control_calidad"/>  -->
+              action="stage_sec_production.action_manufacturado"/>
+    <!-- <menuitem name="Gestión de recursos, maquinaria y empleados" id="stage_sec_production.menu_gestion_recursos" parent="stage_sec_production.menu_planificacion"
+              action="stage_sec_production.action_gestion_recursos"/> -->
+    <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec_production.menu_informes"
+              action="stage_sec_production.action_control_calidad"/>  
 
 
      <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_operaciones"

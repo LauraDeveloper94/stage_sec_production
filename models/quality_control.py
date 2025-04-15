@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Quality_control(models.Model):
         
-    _name = 'stage_sec.quality_control'
+    _name = 'stage_sec_production.quality_control'
     _description = 'Quality control'
         
     control_date = fields.Date(string = "Control date", required=True)
