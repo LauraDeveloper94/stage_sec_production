@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Inventory(models.Model):
     
-    _name = 'stage_sec.inventory'
+    _name = 'stage_sec_production.inventory'
     _description = 'Inventory'
 
     stock_min = fields.Integer(string = "Minimum stock", required=True)
