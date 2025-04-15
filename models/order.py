@@ -7,9 +7,9 @@ class Order(models.Model):
     _name = 'stage_sec_production.order'
     _description = 'Order'
     
-    date = fields.Date(string="Order date", required=True)
-    total_price = fields.Float(string = "Total price of the order", required=True)
-    status = fields.Char(string = "Order status", required=True)
+    date = fields.Date(string="Date", required=True)
+    total_price = fields.Float(string = "Total price", required=True)
+    status = fields.Char(string = "Status", required=True)
     delivery_address = fields.Char(string = "Delivery address", required=True)
     payment_method = fields.Char(string = "Payment method", required=True)
     payment_status = fields.Char(string = "Payment status", required=True)

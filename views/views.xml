@@ -80,7 +80,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_proveedor">
-      <field name="name">Proveedor</field>
+      <field name="name">Proveedores</field>
       <field name="res_model">stage_sec_production.supplier</field>
       <field name="view_mode">tree,form</field>
     </record>

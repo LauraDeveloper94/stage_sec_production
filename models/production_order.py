@@ -6,6 +6,6 @@ class Production_order(models.Model):
     _description = 'Production order'
     
     start_date = fields.Date(string="Start date", required=True)
-    order_status = fields.Char(string="Order status", required=True)
+    status = fields.Char(string="Status", required=True)
     end_date = fields.Date(string="End date", required=True)
     priority_level = fields.Char(string="Priority level", required=True)

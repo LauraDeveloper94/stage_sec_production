@@ -6,10 +6,10 @@ class Machinery(models.Model):
     _name = 'stage_sec_production.machinery'
     _description = 'Machinery'
     
-    name = fields.Char(string = "Machinery name", required=True)
-    location = fields.Char(string = "Machinery location", required=True)
-    type = fields.Char(string= "Machinery type", required=True)
-    status = fields.Char(string = "Machinery status", required=True) 
+    name = fields.Char(string = "Name", required=True)
+    location = fields.Char(string = "Location", required=True)
+    type = fields.Char(string= "Type", required=True)
+    status = fields.Char(string = "Status", required=True) 
     installation_date = fields.Date(string = "Installation date", required=True)
     maintenance_date = fields.Date(string = "Maintenance date", required=True)
     operational_hours = fields.Float(string = "Operational hours", required=True)

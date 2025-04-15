@@ -6,9 +6,9 @@ class Department(models.Model):
     _name = 'stage_sec_production.department'
     _description = 'Department'
     
-    name = fields.Char(string = "Department name", required=True)
+    name = fields.Char(string = "Name", required=True)
     location = fields.Char(string = "Location", required=True)
-    description = fields.Char(string ="Department description", required=True)
+    description = fields.Char(string ="Description", required=True)
     number_employees = fields.Char(string = "Number of employees", required=True)
-    phone = fields.Integer(string = "Phone of department", required=True)
-    email = fields.Char(string = "Department email", required=True)
+    phone = fields.Integer(string = "Phone", required=True)
+    email = fields.Char(string = "Email", required=True)
