@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Supplier(models.Model):
     
-    _name = 'stage_sec.supplier'
+    _name = 'stage_sec_production.supplier'
     _description = 'Supplier'
     
     supplier_name = fields.Char(string="Supplier name", required=True)

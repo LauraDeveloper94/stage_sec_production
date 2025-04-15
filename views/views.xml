@@ -79,6 +79,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="stage_sec_production.action_proveedor">
+      <field name="name">Manufacturado</field>
+      <field name="res_model">stage_sec_production.supplier</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- server action to the one above -->
 <!--
     <record model="ir.actions.server" id="stage_sec_production.action_server">
@@ -106,6 +112,7 @@
     <menuitem name="Planificación" id="stage_sec_production.menu_planificacion" parent="stage_sec_production.menu_root"/>
     <menuitem name="Informes" id="stage_sec_production.menu_informes" parent="stage_sec_production.menu_root"/>
     <menuitem name="Configuración" id="stage_sec_production.menu_configuracion" parent="stage_sec_production.menu_root"/>
+    <menuitem name="Relaciones comerciales" id="stage_sec_production.menu_relaciones_comerciales" parent="stage_sec_production.menu_root"/>
 
 
     <!-- actions --> 
@@ -117,11 +124,13 @@
               action="stage_sec_production.action_maquinaria"/>
     <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_manufacturado"/>
+    <menuitem name="Proveedor" id="stage_sec_production.menu_proveedor" parent="stage_sec_production.menu_relaciones_comerciales"
+              action="stage_sec_production.action_proveedor"/>
     <!-- <menuitem name="Gestión de recursos, maquinaria y empleados" id="stage_sec_production.menu_gestion_recursos" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_gestion_recursos"/> -->
+              action="stage_sec_production.action_gestion_recursos"/>  -->
     <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec_production.menu_informes"
               action="stage_sec_production.action_control_calidad"/>  
-     <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_operaciones"
+     <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_relaciones_comerciales"
               action="stage_sec_production.action_clientes"/>
   </data>
 </odoo>
