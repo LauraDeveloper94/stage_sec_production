@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Manufacturing(models.Model):
     
-    _name = 'stage_sec.manufacturing'
+    _name = 'stage_sec_production.manufacturing'
     _description = 'Manufacturing'
     
     manufacturing_quantity = fields.Integer(string="Quantity of manufacturing", required=True)
