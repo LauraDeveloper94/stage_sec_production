@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Material(models.Model):
     
-    _name = 'stage_sec.material'
+    _name = 'stage_sec_production.material'
     _description = 'Material'
     
     material_name = fields.Char(string="Material", required=True)
