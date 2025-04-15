@@ -91,6 +91,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="stage_sec_production.action_productos">
+      <field name="name">Productos</field>
+      <field name="res_model">stage_sec_production.product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <!-- server action to the one above -->
 <!--
     <record model="ir.actions.server" id="stage_sec_production.action_server">
@@ -128,6 +134,8 @@
               action="stage_sec_production.action_empleados"/>
     <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_maquinaria"/>
+    <menuitem name="Productos" id="stage_sec_production.menu_ordenes_productos" parent="stage_sec_production.menu_productos"
+              action="stage_sec_production.action_productos"/>
     <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
               action="stage_sec_production.action_manufacturado"/>
     <menuitem name="Proveedor" id="stage_sec_production.menu_proveedor" parent="stage_sec_production.menu_relaciones_comerciales"
