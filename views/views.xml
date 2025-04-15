@@ -80,7 +80,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_proveedor">
-      <field name="name">Manufacturado</field>
+      <field name="name">Proveedor</field>
       <field name="res_model">stage_sec_production.supplier</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -98,7 +98,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_lista_materiales">
-      <field name="name">Productos</field>
+      <field name="name">Lista de materiales</field>
       <field name="res_model">stage_sec_production.material</field>
       <field name="view_mode">tree,form</field>
     </record>
