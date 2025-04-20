@@ -13,8 +13,9 @@ class Material(models.Model):
     weight = fields.Float(string = "Weight", required=True)
     stock_min = fields.Integer(string = "Minimum stock", required=True)
     stock_max = fields.Integer(string = "Maximum stock", required=True)
-    stock_quantity = fields.Integer(string="quantity", compute="_compute_stock_alert", store=True)
+    stock_quantity = fields.Integer(string="quantity", required=True)
     availability = fields.Integer(string = "Availability", required=True)
+    stock_alert = fields.Boolean(string="Stock alert",compute="_compute_stock_alert", store=True)
 
     @api.depends('stock_quantity', 'stock_min')
 
