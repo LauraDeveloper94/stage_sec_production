@@ -31,12 +31,5 @@ class Business_entities(models.Model):
         for i in self:
             if i.phone_number and not re.match(phone_validation, i.phone_number):
                 raise ValidationError("The phone number format is invalid. Please enter a valid phone number")
-
-    @api.constrains('name', 'surname1', 'surname2')
-    def _check_just_letters_or_spaces(self):
-        for i in self:
-            for field in [i.name, i.surname1, i.surname2]:
-                if field and not field.replace(" ", "").isalpha():
-                    raise ValidationError("Names and surnames must only contain letters and spaces")
-
+    
 
