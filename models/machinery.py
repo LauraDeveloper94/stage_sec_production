@@ -1,5 +1,6 @@
 # -*- coding: utf -8 -*-
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Machinery(models.Model):
     
@@ -11,7 +12,19 @@ class Machinery(models.Model):
     type = fields.Char(string= "Type", required=True)
     status = fields.Char(string = "Status", required=True, size=50) 
     installation_date = fields.Date(string = "Installation date", required=True)
-    maintenance_date = fields.Date(string = "Maintenance date", required=True)
+    next_maintenance_date = fields.Date(string = "Next maintenance date", required=True)
     operational_hours = fields.Float(string = "Operational hours", required=True)
     maintenance_interval = fields.Float(string = "Maintenance interval", required=True)
     last_maintenance_date = fields.Date(string = "Last maintenance date", required=True)
+
+    @api.constrains('last_maintenance_date', 'next_maintenance_date')
+
+    def _check_maintenance_dates(self):
+        for i in self: 
+            if i.last_maintenance_date and i.next_maintenance_date:
+                if i.last_maintenance_date > i.next_maintenance_date:
+                    raise ValidationError("The last maintenance date must be earlier than the next maintenance date.")
+                
+            if i.installation_date and i.last_maintenance_date:
+                if i.installation_date > i.last_maintenance_date:
+                    raise ValidationError("The installation date must be earlier than the last maintenance date.")
