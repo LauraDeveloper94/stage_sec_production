@@ -9,12 +9,7 @@ class Order(models.Model):
     
     date = fields.Date(string="Date", required=True)
     total_price = fields.Float(string = "Total price", required=True)
-    status = fields.Char(string = "Status", required=True)
-    delivery_address = fields.Char(string = "Delivery address", required=True)
+    status = fields.Char(string = "Status", required=True, size=50)
+    delivery_address = fields.Char(string = "Delivery address", required=True, size=100)
     payment_method = fields.Char(string = "Payment method", required=True)
     payment_status = fields.Char(string = "Payment status", required=True)
-    client_id = fields.Many2one(
-        'stage_sec.cliente', 
-        string="Cliente", 
-        required=True
-    )

@@ -8,4 +8,4 @@ class Production_order(models.Model):
     start_date = fields.Date(string="Start date", required=True)
     status = fields.Char(string="Status", required=True)
     end_date = fields.Date(string="End date", required=True)
-    priority_level = fields.Char(string="Priority level", required=True)
+    priority_level = fields.Char(string="Priority level", required=True, size=20)
