@@ -14,3 +14,5 @@ class Client(models.Model):
     _sql_constraints = [
         ('email_unique', 'unique(email)', 'The email must be unique.')
     ]
+
+order_ids = fields.One2many('stage_sec_production.order', 'client_id') 

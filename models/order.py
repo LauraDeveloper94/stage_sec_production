@@ -13,3 +13,5 @@ class Order(models.Model):
     delivery_address = fields.Char(string = "Delivery address", required=True, size=100)
     payment_method = fields.Char(string = "Payment method", required=True)
     payment_status = fields.Char(string = "Payment status", required=True)
+
+client_id = fields.Many2one('stage_sec_production.client') 
