@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record id="stage_sec_production_product_1" model="stage_sec_production.product">
+            <field name="name">Elevator Tower</field>
+            <field name="description">A heavy-duty tower for lifting illumination equipment</field>
+            <field name="price">3500.00</field>
+            <field name="dimensions">5.0</field>
+            <field name="weight">1200</field>
+            <field name="manufacturing_ref_id" ref="stage_sec_production_manufacturing_1"/>
+        </record>
+        
+        <record id="stage_sec_production_product_2" model="stage_sec_production.product">
+            <field name="name">Concert Stage Platform</field>
+            <field name="description">A durable and modular stage platform designed for concerts and events</field>
+            <field name="price">1500.00</field>
+            <field name="dimensions">2.5</field>
+            <field name="weight">500</field>
+            <field name="manufacturing_ref_id" ref="stage_sec_production_manufacturing_2"/>
+        </record>
+        
+    </data>
+</odoo>
