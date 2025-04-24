@@ -33,6 +33,8 @@
         'data/production_order.xml',
         'data/product.xml',
         'data/quality_control.xml',
+        'data/supplier.xml',
+        'data/section.xml',
     ],
 
     # only loaded in demonstration mode

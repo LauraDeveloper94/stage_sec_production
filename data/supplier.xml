@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record id="stage_sec_production_supplier_1" model="stage_sec_production.supplier">
+            <field name="name">Manuel</field>
+            <field name="surname1">Giménez</field>
+            <field name="surname2">Lorenzo</field>
+            <field name="email">manuel.gimenez@gmail.com</field>
+            <field name="phone_number">+34677888847</field>
+            <field name="address">Calle Angel, 14, Valencia</field>
+            <field name="type">raw_material</field> 
+        </record>
+        
+        <record id="stage_sec_production_supplier_2" model="stage_sec_production.supplier">
+            <field name="name">Minerva</field>
+            <field name="surname1">Morales</field>
+            <field name="surname2">Oltra</field>
+            <field name="email">miverva.morales@gmail.com</field>
+            <field name="phone_number">+34674752233</field>
+            <field name="address">Calle Mayor, 5, Mislata</field>
+            <field name="type">finished_goods</field> 
+        </record>
+        
+    </data>
+</odoo>

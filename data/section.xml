@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+
+        <record id="stage_sec_production_section_1" model="stage_sec_production.section">
+            <field name="name">Cutting Section</field>
+            <field name="location">Warehouse 1</field>
+           <field name="department_id" ref="stage_sec_production_department_production"/>
+        </record>
+
+        <record id="stage_sec_production_section_2" model="stage_sec_production.section">
+            <field name="name">Welding Section</field>
+            <field name="location">Warehouse 2</field>
+            <field name="department_id" ref="stage_sec_production_department_production"/>
+        </record>
+        
+    </data>
+</odoo> 
