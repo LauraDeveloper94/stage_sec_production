@@ -28,6 +28,8 @@
         'data/client.xml',
         'data/department.xml',
         'data/inventory.xml',
+        'data/manufacturing.xml',
+        'data/material.xml',
     ],
 
     # only loaded in demonstration mode

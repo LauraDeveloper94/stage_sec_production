@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="stage_sec_production_material_1" model="stage_sec_production.material">
+            <field name="name">Steel Plate</field>
+            <field name="type">Metal</field>
+            <field name="price">150.00</field>
+            <field name="dimensions">2.5</field>
+            <field name="weight">2500</field>
+            <field name="stock_min">10</field>
+            <field name="stock_max">100</field>
+            <field name="stock_quantity">5</field>
+            <field name="availability">50</field>
+        </record>
+
+        <record id="stage_sec_production_material_2" model="stage_sec_production.material">
+            <field name="name">Aluminum Plate</field>
+            <field name="type">Metal</field>
+            <field name="price">120.00</field>
+            <field name="dimensions">3.0</field>
+            <field name="weight">1500</field>
+            <field name="stock_min">15</field>
+            <field name="stock_max">150</field>
+            <field name="stock_quantity">20</field>
+            <field name="availability">80</field>
+        </record>
+        
+    </data>
+</odoo>
