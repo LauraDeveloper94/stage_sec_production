@@ -12,3 +12,5 @@ class Quality_control(models.Model):
     retest_required = fields.Boolean(string = "Retest required", required=True)
     approved_quantity = fields.Integer(string = "Approved quantity", required=True)
     rejected_quantity = fields.Integer(string = "Rejected quantity", required=True)
+
+    manufacturing_id = fields.Many2one('stage_sec_production.manufacturing')

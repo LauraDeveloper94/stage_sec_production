@@ -14,6 +14,7 @@ class Manufacturing(models.Model):
 
     production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_manufacturing_rel', 'manufacturing_id', 'production_order_id')
     material_ids = fields.Many2many('stage_sec_production.material', 'manufacturing_material_rel', 'manufacturing_id', 'material_id')
+    quality_control_ids = fields.One2many('stage_sec_production.quality_control', 'manufacturing_id')
 
     @api.constrains('start_date', 'end_date')
     def _check_dates(self):
