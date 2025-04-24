@@ -17,6 +17,8 @@ class Material(models.Model):
     availability = fields.Integer(string = "Availability", required=True)
     stock_alert = fields.Boolean(string="Stock alert",compute="_compute_stock_alert", store=True)
 
+    supplier_ids = fields.Many2many('stage_sec_production.supplier', 'material_supplier_rel', 'material_id', 'supplier_id') 
+
     @api.depends('stock_quantity', 'stock_min')
 
     def _compute_stock_alert(self):
