@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import business_entities
 from . import client
 from . import section
 from . import manufacturing
