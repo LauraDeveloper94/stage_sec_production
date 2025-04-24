@@ -15,3 +15,4 @@ class Order(models.Model):
     payment_status = fields.Char(string = "Payment status", required=True)
 
     client_id = fields.Many2one('stage_sec_production.client') 
+    product_ids = fields.Many2many('stage_sec_production.product', 'order_product_rel', 'order_id', 'product_id') 
