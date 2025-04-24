@@ -10,3 +10,4 @@ class Section(models.Model):
     location = fields.Char(string = "Location", required=True, size=100)
 
     employee_ids = fields.One2many('stage_sec_production.employee', 'section_id')
+    department_id = fields.Many2one('stage_sec_production.department')
