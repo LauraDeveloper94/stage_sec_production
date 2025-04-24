@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="stage_sec_production_employee_1" model="stage_sec_production.employee">
+            <field name="id_number">E001</field>
+            <field name="name">María</field>
+            <field name="surname1">Gómez</field>
+            <field name="surname2">Ruiz</field>
+            <field name="email">maria.gomez@stagesec.com</field>
+            <field name="phone_number">+34611222333</field>
+            <field name="type">cutter</field>
+            <field name="address">Calle Sol, 12</field>
+            <field name="position">Factory worker</field>
+            <field name="section_id" ref="stage_sec_production_section_1"/>
+
+        </record>
+        
+        <record id="stage_sec_production_employee_2" model="stage_sec_production.employee">
+            <field name="id_number">E002</field>
+            <field name="name">José</field>
+            <field name="surname1">Martínez</field>
+            <field name="surname2">López</field>
+            <field name="email">jose.martinez@stagesec.com</field>
+            <field name="phone_number">+34611555666</field>
+            <field name="type">welder</field>
+            <field name="address">Calle Río, 9</field>
+            <field name="position">Supervisor</field>
+            <field name="section_id" ref="stage_sec_production_section_2"/>
+        </record>
+    </data>
+</odoo>

@@ -28,13 +28,14 @@
         'data/client.xml',
         'data/department.xml',
         'data/inventory.xml',
-        'data/manufacturing.xml',
         'data/material.xml',
-        'data/production_order.xml',
         'data/product.xml',
         'data/quality_control.xml',
         'data/supplier.xml',
         'data/section.xml',
+        'data/order.xml',
+        'data/manufacturing.xml',
+        'data/employee.xml',
     ],
 
     # only loaded in demonstration mode

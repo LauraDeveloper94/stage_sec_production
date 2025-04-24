@@ -14,11 +14,11 @@ class Employee(models.Model):
     surname2 = fields.Char(string = "Second surname", size=20)
     phone_number = fields.Char(string = "Phone number", size=15)
     type = fields.Selection(
-        [('factory_worker', 'Factory_worker'), ('engineer', 'Engineer')],
+        [('engineer', 'Engineer'), ('cutter', 'Cutter'), ('welder', 'Welder')],
         string="Type", required=True
     )
     address = fields.Char(string = "Address", required=True, size=100)
-    position = fields.Char(string = "Position", required=True, size=50)
+    position = fields.Char(string = "Employee position", required=True)
 
     section_id = fields.Many2one('stage_sec_production.section')
     production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_employee_rel', 'employee_id', 'production_order_id')
