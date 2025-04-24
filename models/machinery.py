@@ -17,6 +17,8 @@ class Machinery(models.Model):
     maintenance_interval = fields.Float(string = "Maintenance interval", required=True)
     last_maintenance_date = fields.Date(string = "Last maintenance date", required=True)
 
+    production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_machinery_rel', 'machinery_id', 'production_order_id') 
+
     @api.constrains('last_maintenance_date', 'next_maintenance_date')
 
     def _check_maintenance_dates(self):

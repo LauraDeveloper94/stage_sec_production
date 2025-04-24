@@ -11,4 +11,5 @@ class Production_order(models.Model):
     priority_level = fields.Char(string="Priority level", required=True, size=20)
 
     employee_ids = fields.Many2many('stage_sec_production.employee', 'production_employee_rel', 'production_order_id', 'employee_id')
+    machinery_ids = fields.Many2many('stage_sec_production.machinery', 'production_machinery_rel', 'production_order_id', 'machinery_id')
     
