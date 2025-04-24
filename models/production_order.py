@@ -12,4 +12,5 @@ class Production_order(models.Model):
 
     employee_ids = fields.Many2many('stage_sec_production.employee', 'production_employee_rel', 'production_order_id', 'employee_id')
     machinery_ids = fields.Many2many('stage_sec_production.machinery', 'production_machinery_rel', 'production_order_id', 'machinery_id')
-    
+    manufacturing_ids = fields.Many2many('stage_sec_production.manufacturing', 'production_manufacturing_rel', 'production_order_id', 'manufacturing_id')
+
