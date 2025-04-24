@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+    
+        <record id="stage_sec_production_inventory_1" model="stage_sec_production.inventory">
+            <field name="stock_min">10</field>
+            <field name="stock_max">100</field>
+            <field name="stock_quantity">8</field>
+            <field name="location">Almacén Principal</field>
+            <field name="entry_date">2025-04-01</field>
+            <field name="exit_date">2025-04-20</field>
+            <field name="last_update">2025-04-23</field>
+        </record>
+        
+        <record id="stage_sec_production_inventory_2" model="stage_sec_production.inventory">
+            <field name="stock_min">20</field>
+            <field name="stock_max">200</field>
+            <field name="stock_quantity">50</field>
+            <field name="location">Almacén Secundario</field>
+            <field name="entry_date">2025-03-10</field>
+            <field name="exit_date">2025-04-15</field>
+            <field name="last_update">2025-04-21</field>
+        </record>
+        
+    </data>
+</odoo>
