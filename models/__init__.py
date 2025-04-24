@@ -13,3 +13,4 @@ from . import product
 from . import material
 from . import inventory
 from . import department
+from . import manufacturing_process

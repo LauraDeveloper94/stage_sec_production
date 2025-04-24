@@ -79,6 +79,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="stage_sec_production.action_asignacion_recursos">
+      <field name="name">Asignación de recursos</field>
+      <field name="res_model">stage_sec_production.manufacturing_process</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
     <record model="ir.actions.act_window" id="stage_sec_production.action_proveedor">
       <field name="name">Proveedores</field>
       <field name="res_model">stage_sec_production.supplier</field>
@@ -164,8 +170,8 @@
               action="stage_sec_production.action_manufacturado"/>
     <menuitem name="Proveedor" id="stage_sec_production.menu_proveedor" parent="stage_sec_production.menu_relaciones_comerciales"
               action="stage_sec_production.action_proveedor"/>
-    <!-- <menuitem name="Gestión de recursos, maquinaria y empleados" id="stage_sec_production.menu_gestion_recursos" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_gestion_recursos"/>  -->
+    <menuitem name="Asignación de recursos" id="stage_sec_production.menu_asignacion_recursos" parent="stage_sec_production.menu_planificacion"
+          action="stage_sec_production.action_asignacion_recursos"/>
     <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec_production.menu_informes"
               action="stage_sec_production.action_control_calidad"/>  
     <menuitem name="Lista de materiales" id="stage_sec_production.menu_lista_materiales" parent="stage_sec_production.menu_productos"
