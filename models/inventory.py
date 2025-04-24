@@ -15,6 +15,8 @@ class Inventory(models.Model):
     last_update = fields.Date(string = "Last update", required=True)
     stock_alert = fields.Boolean(string="Stock alert", compute="_compute_stock_alert", store = True)
 
+    manufacturing_ids = fields.One2many('stage_sec_production.manufacturing', 'inventory_id')
+
     @api.depends('stock_quantity', 'stock_min')
 
     def _compute_stock_alert(self):
