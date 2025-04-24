@@ -7,7 +7,7 @@ class Employee(models.Model):
     _name = 'stage_sec_production.employee'
     _description = 'Employee'
     
-    id_number = fields.Char(string="ID", required=True)
+    id_number = fields.Char(string="Identification number", required=True)
     name = fields.Char(string="Name", required=True, size=20)
     email = fields.Char(string="Email", required=True, size=100)
     surname1 = fields.Char(string = "First surname", required=True, size=20)
@@ -19,3 +19,5 @@ class Employee(models.Model):
     )
     address = fields.Char(string = "Address", required=True, size=100)
     position = fields.Char(string = "Position", required=True, size=50)
+
+    section_id = fields.Many2one('stage_sec_production.section')
