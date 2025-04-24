@@ -13,6 +13,7 @@ class Manufacturing(models.Model):
     end_date = fields.Date(string = "End date", required=True)
 
     production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_manufacturing_rel', 'manufacturing_id', 'production_order_id')
+    material_ids = fields.Many2many('stage_sec_production.material', 'manufacturing_material_rel', 'manufacturing_id', 'material_id')
 
     @api.constrains('start_date', 'end_date')
     def _check_dates(self):

@@ -18,6 +18,7 @@ class Material(models.Model):
     stock_alert = fields.Boolean(string="Stock alert",compute="_compute_stock_alert", store=True)
 
     supplier_ids = fields.Many2many('stage_sec_production.supplier', 'material_supplier_rel', 'material_id', 'supplier_id') 
+    manufacturing_ids = fields.Many2many('stage_sec_production.manufacturing', 'manufacturing_material_rel', 'material_id', 'manufacturing_id')
 
     @api.depends('stock_quantity', 'stock_min')
 
