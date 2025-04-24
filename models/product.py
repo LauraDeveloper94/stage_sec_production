@@ -13,3 +13,4 @@ class Product(models.Model):
     weight = fields.Float(string = "Weight", required=True)
 
     order_ids= fields.Many2many('stage_sec_production.order', 'order_product_rel', 'product_id', 'order_id') 
+    manufacturing_ref_id = fields.Many2one('stage_sec_production.manufacturing') 

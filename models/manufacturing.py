@@ -16,6 +16,15 @@ class Manufacturing(models.Model):
     material_ids = fields.Many2many('stage_sec_production.material', 'manufacturing_material_rel', 'manufacturing_id', 'material_id')
     quality_control_ids = fields.One2many('stage_sec_production.quality_control', 'manufacturing_id')
     inventory_id = fields.Many2one('stage_sec_production.inventory')
+    product_id = fields.Many2one('stage_sec_production.product', compute='_compute_product', inverse='_inverse_product') #1:1 con producto
+    
+    def _compute_product(self):
+        for rec in self:
+            rec.product_id = self.env['stage_sec_production.product'].search([('manufacturing_ref_id', '=', rec.id)], limit=1)
+            
+    def _inverse_product(self):
+        for rec in self:
+            rec.product_id.manufacturing_ref_id = rec
 
     @api.constrains('start_date', 'end_date')
     def _check_dates(self):
