@@ -30,6 +30,7 @@
         'data/inventory.xml',
         'data/manufacturing.xml',
         'data/material.xml',
+        'data/production_order.xml',
     ],
 
     # only loaded in demonstration mode
