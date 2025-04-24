@@ -26,6 +26,7 @@
         'views/views.xml',
         'views/templates.xml',
         'data/client.xml',
+        'data/department.xml',
     ],
 
     # only loaded in demonstration mode

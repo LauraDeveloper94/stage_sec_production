@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="stage_sec_production_department_production" model="stage_sec_production.department">
+            <field name="name">Production</field>
+            <field name="location">Building A - Floor 1</field>
+            <field name="description">Handles all aspects of the production process</field>
+            <field name="number_employees">15</field>
+            <field name="phone">+34961123456</field>
+            <field name="email">production@stagesec.com</field>
+        </record>
+        
+        <record id="stage_sec_production_department_sales" model="stage_sec_production.department">
+            <field name="name">Sales</field>
+            <field name="location">Building B - Floor 2</field>
+            <field name="description">Responsible for client relationships and orders</field>
+            <field name="number_employees">8</field>
+            <field name="phone">+34961123457</field>
+            <field name="email">sales@stagesec.com</field>
+        </record>
+        
+        <record id="stage_sec_production_department_hr" model="stage_sec_production.department">
+            <field name="name">Human Resources</field>
+            <field name="location">Building A - Floor 3</field>
+            <field name="description">Manages recruitment and employee wellbeing</field>
+            <field name="number_employees">5</field>
+            <field name="phone">+34961123458</field>
+            <field name="email">hr@stagesec.com</field>
+        </record>
+    </data>
+</odoo>
