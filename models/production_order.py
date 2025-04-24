@@ -9,3 +9,6 @@ class Production_order(models.Model):
     status = fields.Char(string="Status", required=True)
     end_date = fields.Date(string="End date", required=True)
     priority_level = fields.Char(string="Priority level", required=True, size=20)
+
+    employee_ids = fields.Many2many('stage_sec_production.employee', 'production_employee_rel', 'production_order_id', 'employee_id')
+    
