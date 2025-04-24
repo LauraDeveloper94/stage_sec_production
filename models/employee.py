@@ -21,8 +21,6 @@ class Employee(models.Model):
     position = fields.Char(string = "Position", required=True, size=50)
 
     section_id = fields.Many2one('stage_sec_production.section')
-    production_order_ids = fields.Many2many('stage_sec_production.production_order', 
-                                                            'production_employee_rel', 
-                                                            'employee_id', 
-                                                            'production_order_id')
+    production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_employee_rel', 'employee_id', 'production_order_id')
+    manufacturing_process_ids = fields.One2many('stage_sec_production.manufacturing_process', 'employee_id')
 

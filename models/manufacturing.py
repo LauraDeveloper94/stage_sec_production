@@ -17,6 +17,7 @@ class Manufacturing(models.Model):
     quality_control_ids = fields.One2many('stage_sec_production.quality_control', 'manufacturing_id')
     inventory_id = fields.Many2one('stage_sec_production.inventory')
     product_id = fields.Many2one('stage_sec_production.product', compute='_compute_product', inverse='_inverse_product') #1:1 con producto
+    manufacturing_process_ids = fields.One2many('stage_sec_production.manufacturing_process', 'manufacturing_id')
     
     def _compute_product(self):
         for rec in self:
