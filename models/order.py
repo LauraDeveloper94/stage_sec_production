@@ -14,4 +14,4 @@ class Order(models.Model):
     payment_method = fields.Char(string = "Payment method", required=True)
     payment_status = fields.Char(string = "Payment status", required=True)
 
-client_id = fields.Many2one('stage_sec_production.client') 
+    client_id = fields.Many2one('stage_sec_production.client') 
