@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record id="stage_sec_production_order_1" model="stage_sec_production.order">
+            <field name="date">2025-04-01</field>
+            <field name="total_price">1500.00</field>
+            <field name="status">Pending</field>
+            <field name="delivery_address">Avenida del Oeste, 14, Valencia</field>
+            <field name="payment_method">Credit Card</field>
+            <field name="payment_status">Unpaid</field>
+            <field name="client_id" ref="stage_sec_production_client_1"/> 
+        </record>
+        
+        <record id="stage_sec_production_order_2" model="stage_sec_production.order">
+            <field name="date">2025-04-02</field>
+            <field name="total_price">2500.00</field>
+            <field name="status">Completed</field>
+            <field name="delivery_address">Carrer Colom, 30, Valencia</field>
+            <field name="payment_method">Bank Transfer</field>
+            <field name="payment_status">Paid</field>
+            <field name="client_id" ref="stage_sec_production_client_2"/> 
+        </record>
+        
+    </data>
+</odoo>
