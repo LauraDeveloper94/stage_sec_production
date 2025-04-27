@@ -7,8 +7,8 @@
             <field name="phase">Cutting</field>
             <field name="start_date">2025-04-01</field>
             <field name="end_date">2025-04-05</field>
-            <field name="inventory_id" ref="stage_sec_production_inventory_1"/>
             <field name="material_ids" eval="[(6, 0, [ref('stage_sec_production_material_1')])]"/>
+            <field name="inventory_id" ref="stage_sec_production_inventory_1"/>
             
         </record>
         
@@ -17,7 +17,7 @@
             <field name="phase">Welding</field>
             <field name="start_date">2025-04-06</field>
             <field name="end_date">2025-04-10</field>
-            <field name="inventory_id" ref="stage_sec_production_inventory_2"/>
+            <field name="material_ids" eval="[(6, 0, [ref('stage_sec_production_material_2')])]"/>
             <field name="inventory_id" ref="stage_sec_production_inventory_2"/>
             
         </record>

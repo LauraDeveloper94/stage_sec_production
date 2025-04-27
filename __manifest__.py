@@ -36,7 +36,8 @@
         'data/order.xml',
         'data/manufacturing.xml',
         'data/employee.xml',
-        'data/machinery.xml'
+        'data/machinery.xml',
+        'data/production_order.xml',
     ],
 
     # only loaded in demonstration mode

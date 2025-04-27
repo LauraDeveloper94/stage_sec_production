@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
     <data>
-    
-        <record id="stage_sec_production_order_1" model="stage_sec_production.order">
-            <field name="date">2025-04-01</field>
-            <field name="total_price">1500.00</field>
+
+        <record id="stage_sec_production_production_order_1" model="stage_sec_production.production_order">
+            <field name="start_date">2025-04-20</field>
+            <field name="end_date">2025-04-25</field>
+            <field name="status">In Progress</field>
+            <field name="priority_level">High</field>
+            <field name="employee_ids" eval="[(6, 0, [ref('stage_sec_production_employee_1'), ref('stage_sec_production_employee_2')])]"/>
+            <field name="machinery_ids" eval="[(6, 0, [ref('stage_sec_production_machinery_1')])]"/>
+            <field name="manufacturing_ids" eval="[(6, 0, [ref('stage_sec_production_manufacturing_1')])]"/>
+        </record>
+
+        <record id="stage_sec_production_production_order_2" model="stage_sec_production.production_order">
+            <field name="start_date">2025-05-01</field>
+            <field name="end_date">2025-05-10</field>
             <field name="status">Pending</field>
-            <field name="delivery_address">Avenida del Oeste, 14, Valencia</field>
-            <field name="payment_method">Credit Card</field>
-            <field name="payment_status">Unpaid</field>
-            <field name="client_id" ref="stage_sec_production_client_1"/> 
+            <field name="priority_level">Medium</field>
+             <field name="employee_ids" eval="[(6, 0, [ref('stage_sec_production_employee_2')])]"/>
+            <field name="machinery_ids" eval="[(6, 0, [ref('stage_sec_production_machinery_2')])]"/>
+            <field name="manufacturing_ids" eval="[(6, 0, [ref('stage_sec_production_manufacturing_2')])]"/>
         </record>
-        
-        <record id="stage_sec_production_order_2" model="stage_sec_production.order">
-            <field name="date">2025-04-02</field>
-            <field name="total_price">2500.00</field>
-            <field name="status">Completed</field>
-            <field name="delivery_address">Carrer Colom, 30, Valencia</field>
-            <field name="payment_method">Bank Transfer</field>
-            <field name="payment_status">Paid</field>
-            <field name="client_id" ref="stage_sec_production_client_2"/> 
-        </record>
-        
+
     </data>
 </odoo>
