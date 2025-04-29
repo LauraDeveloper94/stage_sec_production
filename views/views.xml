@@ -2,47 +2,524 @@
   <data>
     <!-- explicit list view definition 
 
-    <record model="ir.ui.view" id="stage_sec_production.list">
+    <record model="ir.ui.view" id="view_form_client">
       <field name="name">stage_sec_production list</field>
       <field name="model">stage_sec_production.stage_sec_production</field>
       <field name="arch" type="xml">
         <tree>
-        <field name="client_name"/>
-        <field name="email"/>
+        <field name="name"/>
         <field name="surname1"/>
         <field name="surname2"/>
+        <field name="email"/>
         <field name="phone_number"/>
-        <field name="client_type"/>
-        <field name="client_address"/>
+        <field name="address"/>
+        <field name="type"/>
         </tree>
       </field>
     </record>
 
     -->
 
-    <!-- form view
-    <record id="view_form_client" model="ir.ui.view">
-      <field name="name">stage_sec.client.form</field>
-      <field name="model">stage_sec.client</field>
+    <record id="view_tree_client" model="ir.ui.view">
+      <field name="name">Lista clientes</field>
+      <field name="model">stage_sec_production.client</field>
       <field name="arch" type="xml">
-        <form string="Client">
-          <group>
-            <field name="client_name"/>
-            <field name="surname1"/>
-            <field name="surname2"/>
-            <field name="email"/>
-            <field name="phone_number"/>
-            <field name="client_type"/>
-            <field name="client_address"/>
+        <tree>
+          <field name="name"/>
+          <field name="surname1"/>
+          <field name="surname2"/>
+          <field name="email" />
+          <field name="phone_number"/>
+          <field name="address"/>
+          <field name="type"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_client" model="ir.ui.view">
+      <field name="name">Formulario cliente</field>
+      <field name="model">stage_sec_production.client</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos">
+              <field name="name" />
+              <field name="surname1" />
+              <field name="surname2" />
+              <field name="type" />
+            </group>
+            <group string="Contacto">
+              <field name="address" />
+              <field name="email" />
+              <field name="phone_number" />
+            </group>
           </group>
         </form>
       </field>
     </record>
 
-    -->
+    <record id="view_tree_supplier" model="ir.ui.view">
+      <field name="name">Lista proveedores</field>
+      <field name="model">stage_sec_production.supplier</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="email"/>
+          <field name="surname1"/>
+          <field name="surname2"/>
+          <field name="phone_number"/>
+          <field name="address"/>
+          <field name="type"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_supplier" model="ir.ui.view">
+      <field name="name">Formulario proveedor</field>
+      <field name="model">stage_sec_production.supplier</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos">
+              <field name="name"/>
+              <field name="surname1"/>
+              <field name="surname2"/>
+              <field name="type"/>
+            </group>
+            <group string="Contacto">
+              <field name="address"/>
+              <field name="email"/>
+              <field name="phone_number"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_employee" model="ir.ui.view">
+      <field name="name">Lista empleados</field>
+      <field name="model">stage_sec_production.employee</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_number"/>
+          <field name="name"/>
+          <field name="surname1"/>
+          <field name="surname2"/>
+          <field name="email"/>
+          <field name="phone_number"/>
+          <field name="address"/>
+          <field name="type"/>
+          <field name="position"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_employee" model="ir.ui.view">
+      <field name="name">Formulario empleados</field>
+      <field name="model">stage_sec_production.employee</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="3">
+            <group string="Datos">
+              <field name="id_number" />
+              <field name="name" />
+              <field name="surname1" />
+              <field name="surname2" />
+            </group>
+            <group string="Contacto">
+              <field name="address" />
+              <field name="email" />
+              <field name="phone_number" />
+            </group>
+            <group string="Información adicional">
+              <field name="type"/>
+              <field name="position"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_deparment" model="ir.ui.view">
+      <field name="name">Lista departamentos</field>
+      <field name="model">stage_sec_production.department</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="location" />
+          <field name="description" />
+          <field name="number_employees" />
+          <field name="phone" />
+          <field name="email" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_department" model="ir.ui.view">
+      <field name="name">Formulario departamento</field>
+      <field name="model">stage_sec_production.department</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos departamento">
+              <field name="name"/>
+              <field name="location"/>
+              <field name="description"/>
+              <field name="number_employees"/>
+            </group>
+            <group string="Contacto">
+              <field name="phone"/>
+              <field name="email"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_section" model="ir.ui.view">
+      <field name="name">Lista secciones</field>
+      <field name="model">stage_sec_production.section</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="location" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_section" model="ir.ui.view">
+      <field name="name">Formulario sección</field>
+      <field name="model">stage_sec_production.section</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group string="Datos sección">
+              <field name="name"/>
+              <field name="location"/>
+              <field name="department_id"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_inventory" model="ir.ui.view">
+      <field name="name">Lista inventarios</field>
+      <field name="model">stage_sec_production.inventory</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="stock_min"/>
+          <field name="stock_max"/>
+          <field name="stock_quantity"/>
+          <field name="location"/>
+          <field name="entry_date"/>
+          <field name="exit_date"/>
+          <field name="last_update"/>
+          <field name="stock_alert"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_inventory" model="ir.ui.view">
+      <field name="name">Formulario inventario</field>
+      <field name="model">stage_sec_production.inventory</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos inventario">
+              <field name="location"/>
+              <field name="entry_date"/>
+              <field name="exit_date"/>
+            </group>
+            <group string="Control de stock">
+              <field name="stock_min"/>
+              <field name="stock_max"/>
+              <field name="stock_quantity"/>
+              <field name="stock_alert"/>
+              <field name="last_update"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_material" model="ir.ui.view">
+      <field name="name">Lista materiales</field>
+      <field name="model">stage_sec_production.material</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="type"/>
+          <field name="price"/>
+          <field name="dimensions"/>
+          <field name="weight"/>
+          <field name="stock_min"/>
+          <field name="stock_max"/>
+          <field name="stock_quantity"/>
+          <field name="availability"/>
+          <field name="stock_alert"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_material" model="ir.ui.view">
+      <field name="name">Formulario material</field>
+      <field name="model">stage_sec_production.material</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="3">
+            <group string="Datos material">
+              <field name="name"/>
+              <field name="type"/>
+              <field name="price"/>            
+            </group>
+            <group string="Características">
+              <field name="dimensions"/>
+              <field name="weight"/>            
+            </group>
+            <group string="Control de stock">
+              <field name="stock_min"/>
+              <field name="stock_max"/>
+              <field name="stock_quantity"/>
+              <field name="availability"/>
+              <field name="stock_alert"/>          
+            </group>         
+          </group>         
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_manufacturing" model="ir.ui.view">
+      <field name="name">Lista manufacturados</field>
+      <field name="model">stage_sec_production.manufacturing</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="quantity"/>
+          <field name="phase"/>
+          <field name="start_date"/>
+          <field name="end_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_manufacturing" model="ir.ui.view">
+      <field name="name">Formulario manufacturado</field>
+      <field name="model">stage_sec_production.manufacturing</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos manufacturado">
+              <field name="name"/>
+              <field name="quantity"/>
+              <field name="phase"/>
+              <field name="start_date"/>
+              <field name="end_date"/>
+              <field name="inventory_id"/>            
+            </group>
+            <group string="Lista materiales">
+              <field name="material_ids">
+                <tree>
+                  <field name="name"/>
+                </tree>
+              </field>
+            </group>           
+          </group>         
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_product" model="ir.ui.view">
+      <field name="name">Lista productos</field>
+      <field name="model">stage_sec_production.product</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="price"/>
+          <field name="dimensions"/>
+          <field name="weight"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_product" model="ir.ui.view">
+      <field name="name">Formulario productos</field>
+      <field name="model">stage_sec_production.product</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos del producto">
+              <field name="name"/>
+              <field name="description"/>
+              <field name="price"/>
+              <field name="order_id"/>
+            </group>
+            <group string="Características">
+              <field name="dimensions"/>
+              <field name="weight"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_order" model="ir.ui.view">
+      <field name="name">Lista pedidos</field>
+      <field name="model">stage_sec_production.order</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="order_number"/>
+          <field name="date"/>
+          <field name="total_price"/>
+          <field name="status"/>
+          <field name="delivery_address"/>
+          <field name="payment_method"/>
+          <field name="payment_status"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_order" model="ir.ui.view">
+      <field name="name">Formulario pedidos</field>
+      <field name="model">stage_sec_production.order</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="3">
+            <group string="Datos del pedido">
+              <field name="order_number"/>
+              <field name="date"/>
+              <field name="total_price"/>            
+              <field name="delivery_address"/>
+              <field name="status"/>
+              <field name="client_id"/>
+            </group>
+            <group string="Pago">
+              <field name="payment_method"/>
+              <field name="payment_status"/>
+            </group>
+          </group>         
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_production_order" model="ir.ui.view">
+      <field name="name">Lista órdenes de producción</field>
+      <field name="model">stage_sec_production.production_order</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="start_date" />
+          <field name="status" />
+          <field name="end_date" />
+          <field name="priority_level" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_production_order" model="ir.ui.view">
+      <field name="name">Formulario órdenes de producción</field>
+      <field name="model">stage_sec_production.production_order</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group string="Datos órden de producción">
+              <field name="start_date"/>
+              <field name="status"/>
+              <field name="end_date"/>            
+              <field name="priority_level"/>
+            </group>
+            <group string="Empleados">
+              <field name="employee_ids">
+                <tree>
+                  <field name="id_number"/>
+                  <field name="name"/>
+                  <field name="surname1"/>            
+                  <field name="surname2"/>
+                </tree>
+              </field>
+            </group>
+            <group string="Manufacturado">
+              <field name="manufacturing_ids">
+                <tree>
+                  <field name="quantity"/>
+                  <field name="phase"/>
+                </tree>
+              </field>
+            </group>
+            <group string="Maquinaria">
+              <field name="machinery_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="type"/>            
+                  <field name="location"/>
+                  <field name="status"/>
+                </tree>
+              </field>
+            </group>
+          </group>         
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_machinery" model="ir.ui.view">
+      <field name="name">Lista de maquinaria</field>
+      <field name="model">stage_sec_production.machinery</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="location"/>
+          <field name="type"/>
+          <field name="status"/>
+          <field name="installation_date"/>
+          <field name="next_maintenance_date"/>
+          <field name="operational_hours"/>
+          <field name="maintenance_interval"/>
+          <field name="last_maintenance_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_machinery" model="ir.ui.view">
+      <field name="name">Formulario machinery</field>
+      <field name="model">stage_sec_production.machinery</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos máquina">
+              <field name="name"/>
+              <field name="location"/>
+              <field name="type"/>
+              <field name="installation_date"/>
+              <field name="status"/>            
+            </group>
+            <group string="Mantenimiento">
+              <field name="operational_hours"/>
+              <field name="maintenance_interval"/>
+              <field name="next_maintenance_date"/>   
+              <field name="last_maintenance_date"/>
+            </group>
+          </group>         
+        </form>
+      </field>
+    </record>
+
+    <record id="view_tree_quality_control" model="ir.ui.view">
+      <field name="name">Lista de controles de calidad</field>
+      <field name="model">stage_sec_production.quality_control</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="date"/>
+          <field name="status"/>
+          <field name="qc_report"/>
+          <field name="retest_required"/>
+          <field name="approved_quantity"/>
+          <field name="rejected_quantity"/>
+        </tree>
+      </field>
+    </record>
 
     <!-- actions opening views on models  -->
-    
+
     <record model="ir.actions.act_window" id="stage_sec_production.action_ordenes">
       <field name="name">Órdenes de Producción</field>
       <field name="res_model">stage_sec_production.production_order</field>
@@ -53,7 +530,7 @@
       <field name="name">Control de Calidad</field>
       <field name="res_model">stage_sec_production.quality_control</field>
       <field name="view_mode">tree,form</field>
-    </record> 
+    </record>
 
     <record model="ir.actions.act_window" id="stage_sec_production.action_clientes">
       <field name="name">Clientes</field>
@@ -128,7 +605,7 @@
     </record>
 
     <!-- server action to the one above -->
-<!--
+    <!--
     <record model="ir.actions.server" id="stage_sec_production.action_server">
       <field name="name">stage_sec_production server</field>
       <field name="model_id" ref="model_stage_sec_production_stage_sec_production"/>
@@ -145,46 +622,66 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Manufacturing StageSec" id="stage_sec_production.menu_root"/>
+    <menuitem name="Manufacturing StageSec" id="stage_sec_production.menu_root" />
 
-    <!-- menu categories --> 
+    <!-- menu categories -->
 
-    <menuitem name="Productos" id="stage_sec_production.menu_productos" parent="stage_sec_production.menu_root"/>
-    <menuitem name="Operaciones" id="stage_sec_production.menu_operaciones" parent="stage_sec_production.menu_root"/>
-    <menuitem name="Planificación" id="stage_sec_production.menu_planificacion" parent="stage_sec_production.menu_root"/>
-    <menuitem name="Informes" id="stage_sec_production.menu_informes" parent="stage_sec_production.menu_root"/>
-    <menuitem name="Relaciones comerciales" id="stage_sec_production.menu_relaciones_comerciales" parent="stage_sec_production.menu_root"/>
-    <menuitem name="Estructura" id="stage_sec_production.menu_estructura" parent="stage_sec_production.menu_root"/>
+    <menuitem name="Productos" id="stage_sec_production.menu_productos"
+      parent="stage_sec_production.menu_root" />
+    <menuitem name="Operaciones" id="stage_sec_production.menu_operaciones"
+      parent="stage_sec_production.menu_root" />
+    <menuitem name="Planificación" id="stage_sec_production.menu_planificacion"
+      parent="stage_sec_production.menu_root" />
+    <menuitem name="Informes" id="stage_sec_production.menu_informes"
+      parent="stage_sec_production.menu_root" />
+    <menuitem name="Relaciones comerciales" id="stage_sec_production.menu_relaciones_comerciales"
+      parent="stage_sec_production.menu_root" />
+    <menuitem name="Estructura" id="stage_sec_production.menu_estructura"
+      parent="stage_sec_production.menu_root" />
 
 
-    <!-- actions --> 
-    <menuitem name="Órdenes de producción" id="stage_sec_production.menu_ordenes_produccion" parent="stage_sec_production.menu_operaciones"
-              action="stage_sec_production.action_ordenes"/>
-    <menuitem name="Empleados" id="stage_sec_production.menu_empleados" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_empleados"/>
-    <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_maquinaria"/>
-    <menuitem name="Productos" id="stage_sec_production.menu_ordenes_productos" parent="stage_sec_production.menu_productos"
-              action="stage_sec_production.action_productos"/>
-    <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado" parent="stage_sec_production.menu_planificacion"
-              action="stage_sec_production.action_manufacturado"/>
-    <menuitem name="Proveedor" id="stage_sec_production.menu_proveedor" parent="stage_sec_production.menu_relaciones_comerciales"
-              action="stage_sec_production.action_proveedor"/>
-    <menuitem name="Asignación de recursos" id="stage_sec_production.menu_asignacion_recursos" parent="stage_sec_production.menu_planificacion"
-          action="stage_sec_production.action_asignacion_recursos"/>
-    <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad" parent="stage_sec_production.menu_informes"
-              action="stage_sec_production.action_control_calidad"/>  
-    <menuitem name="Lista de materiales" id="stage_sec_production.menu_lista_materiales" parent="stage_sec_production.menu_productos"
-              action="stage_sec_production.action_lista_materiales"/> 
-    <menuitem name="Clientes" id="stage_sec_production.menu_clientes" parent="stage_sec_production.menu_relaciones_comerciales"
-              action="stage_sec_production.action_clientes"/>
-    <menuitem name="Pedidos" id="stage_sec_production.menu_pedidos" parent="stage_sec_production.menu_operaciones"
-              action="stage_sec_production.action_pedido"/>
-    <menuitem name="Inventario" id="stage_sec_production.menu_inventario" parent="stage_sec_production.menu_productos"
-              action="stage_sec_production.action_inventario"/>
-    <menuitem name="Departamentos" id="stage_sec_production.menu_departamentos" parent="stage_sec_production.menu_estructura"
-              action="stage_sec_production.action_departamentos"/>
-    <menuitem name="Secciones" id="stage_sec_production.menu_secciones" parent="stage_sec_production.menu_estructura"
-              action="stage_sec_production.action_secciones"/>
+    <!-- actions -->
+    <menuitem name="Órdenes de producción" id="stage_sec_production.menu_ordenes_produccion"
+      parent="stage_sec_production.menu_operaciones"
+      action="stage_sec_production.action_ordenes" />
+    <menuitem name="Empleados" id="stage_sec_production.menu_empleados"
+      parent="stage_sec_production.menu_planificacion"
+      action="stage_sec_production.action_empleados" />
+    <menuitem name="Maquinaria" id="stage_sec_production.menu_maquinaria"
+      parent="stage_sec_production.menu_planificacion"
+      action="stage_sec_production.action_maquinaria" />
+    <menuitem name="Productos" id="stage_sec_production.menu_ordenes_productos"
+      parent="stage_sec_production.menu_productos"
+      action="stage_sec_production.action_productos" />
+    <menuitem name="Manufacturado" id="stage_sec_production.menu_manufacturado"
+      parent="stage_sec_production.menu_planificacion"
+      action="stage_sec_production.action_manufacturado" />
+    <menuitem name="Proveedor" id="stage_sec_production.menu_proveedor"
+      parent="stage_sec_production.menu_relaciones_comerciales"
+      action="stage_sec_production.action_proveedor" />
+    <menuitem name="Asignación de recursos" id="stage_sec_production.menu_asignacion_recursos"
+      parent="stage_sec_production.menu_planificacion"
+      action="stage_sec_production.action_asignacion_recursos" />
+    <menuitem name="Control de calidad" id="stage_sec_production.menu_control_calidad"
+      parent="stage_sec_production.menu_informes"
+      action="stage_sec_production.action_control_calidad" />
+    <menuitem name="Lista de materiales" id="stage_sec_production.menu_lista_materiales"
+      parent="stage_sec_production.menu_productos"
+      action="stage_sec_production.action_lista_materiales" />
+    <menuitem name="Clientes" id="stage_sec_production.menu_clientes"
+      parent="stage_sec_production.menu_relaciones_comerciales"
+      action="stage_sec_production.action_clientes" />
+    <menuitem name="Pedidos" id="stage_sec_production.menu_pedidos"
+      parent="stage_sec_production.menu_operaciones"
+      action="stage_sec_production.action_pedido" />
+    <menuitem name="Inventario" id="stage_sec_production.menu_inventario"
+      parent="stage_sec_production.menu_productos"
+      action="stage_sec_production.action_inventario" />
+    <menuitem name="Departamentos" id="stage_sec_production.menu_departamentos"
+      parent="stage_sec_production.menu_estructura"
+      action="stage_sec_production.action_departamentos" />
+    <menuitem name="Secciones" id="stage_sec_production.menu_secciones"
+      parent="stage_sec_production.menu_estructura"
+      action="stage_sec_production.action_secciones" />
   </data>
 </odoo>

@@ -21,8 +21,9 @@ class Client(models.Model):
     order_ids = fields.One2many('stage_sec_production.order', 'client_id')  
 
     _sql_constraints = [
-    ('email_unique', 'unique(email)', 'The email must be unique.'),
+    ('email_unique', 'UNIQUE(email)', 'The email must be unique.'),
     ]
+
 
     @api.constrains('email')
     def _check_email_format(self):

@@ -1,4 +1,4 @@
-# -*- coding: utf -8 -*-
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
@@ -7,6 +7,7 @@ class Manufacturing(models.Model):
     _name = 'stage_sec_production.manufacturing'
     _description = 'Manufacturing'
     
+    name = fields.Char(string="Name", required=True)
     quantity = fields.Integer(string="Quantity", required=True)
     phase = fields.Char(string="Phase", required=True)
     start_date = fields.Date(string = "Start date", required=True)

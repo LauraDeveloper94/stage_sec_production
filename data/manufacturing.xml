@@ -3,6 +3,7 @@
     <data>
 
         <record id="stage_sec_production_manufacturing_1" model="stage_sec_production.manufacturing">
+            <field name="name">Elevator Tower</field>
             <field name="quantity">100</field>
             <field name="phase">Cutting</field>
             <field name="start_date">2025-04-01</field>
@@ -13,6 +14,7 @@
         </record>
         
         <record id="stage_sec_production_manufacturing_2" model="stage_sec_production.manufacturing">
+            <field name="name">Concert Stage Plattform</field>
             <field name="quantity">200</field>
             <field name="phase">Welding</field>
             <field name="start_date">2025-04-06</field>

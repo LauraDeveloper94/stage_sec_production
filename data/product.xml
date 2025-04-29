@@ -9,6 +9,7 @@
             <field name="dimensions">5.0</field>
             <field name="weight">1200</field>
             <field name="manufacturing_ref_id" ref="stage_sec_production_manufacturing_1"/>
+            <field name="order_id" ref="stage_sec_production_order_1"/>
         </record>
         
         <record id="stage_sec_production_product_2" model="stage_sec_production.product">
@@ -18,6 +19,7 @@
             <field name="dimensions">2.5</field>
             <field name="weight">500</field>
             <field name="manufacturing_ref_id" ref="stage_sec_production_manufacturing_2"/>
+            <field name="order_id" ref="stage_sec_production_order_2"/>
         </record>
         
     </data>

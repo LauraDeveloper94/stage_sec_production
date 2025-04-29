@@ -18,7 +18,7 @@
             <field name="end_date">2025-05-10</field>
             <field name="status">Pending</field>
             <field name="priority_level">Medium</field>
-             <field name="employee_ids" eval="[(6, 0, [ref('stage_sec_production_employee_2')])]"/>
+            <field name="employee_ids" eval="[(6, 0, [ref('stage_sec_production_employee_2')])]"/>
             <field name="machinery_ids" eval="[(6, 0, [ref('stage_sec_production_machinery_2')])]"/>
             <field name="manufacturing_ids" eval="[(6, 0, [ref('stage_sec_production_manufacturing_2')])]"/>
         </record>

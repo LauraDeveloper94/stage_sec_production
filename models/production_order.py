@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Production_order(models.Model):
     _name = 'stage_sec_production.production_order'
@@ -13,4 +14,12 @@ class Production_order(models.Model):
     employee_ids = fields.Many2many('stage_sec_production.employee', 'production_employee_rel', 'production_order_id', 'employee_id')
     machinery_ids = fields.Many2many('stage_sec_production.machinery', 'production_machinery_rel', 'production_order_id', 'machinery_id')
     manufacturing_ids = fields.Many2many('stage_sec_production.manufacturing', 'production_manufacturing_rel', 'production_order_id', 'manufacturing_id')
+
+    @api.constrains('start_date', 'end_date')
+    def _check_dates(self):
+        for i in self:
+            if i.start_date and i.end_date:
+                if i.start_date > i.end_date:
+                    raise ValidationError("The start date cannot be later than the end date.")
+    
 

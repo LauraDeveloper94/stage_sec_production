@@ -1,5 +1,6 @@
-# -*- coding: utf -8 -*-
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Product(models.Model):
     
@@ -12,5 +13,17 @@ class Product(models.Model):
     dimensions = fields.Float(string = "Dimensions", required=True)
     weight = fields.Float(string = "Weight", required=True)
 
-    order_ids= fields.Many2many('stage_sec_production.order', 'order_product_rel', 'product_id', 'order_id') 
+    order_id= fields.Many2one('stage_sec_production.order') 
     manufacturing_ref_id = fields.Many2one('stage_sec_production.manufacturing') 
+
+    @api.constrains('price')
+    def _check_price(self):
+        for i in self:
+            if i.price < 0:
+                raise ValidationError("The price cannot be negative.")
+
+    @api.constrains('weight')
+    def _check_weight(self):
+        for i in self:
+            if i.weight < 0:
+                raise ValidationError("The weight cannot be negative.")

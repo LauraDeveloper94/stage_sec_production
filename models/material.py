@@ -1,5 +1,6 @@
-# -*- coding: utf -8 -*-
+# -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Material(models.Model):
     
@@ -25,3 +26,9 @@ class Material(models.Model):
     def _compute_stock_alert(self):
         for i in self:
             i.stock_alert = i.stock_quantity < i.stock_min 
+
+    @api.constrains('price')
+    def _check_price(self):
+        for i in self:
+            if i.price < 0:
+                raise ValidationError("The total price cannot be negative.")
