@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="access_stage_sec_production_employee_CEO" model="ir.model.access">
+            <field name="name">CEO access</field>
+            <field name="model_id" ref="model_stage_sec_production_employee"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+    
+        <record id="access_stage_sec_production_employee_HEAD" model="ir.model.access">
+            <field name="name">Head access</field>
+            <field name="model_id" ref="model_stage_sec_production_employee"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+                
+        <record id="access_stage_sec_production_employee_SUPERVISOR" model="ir.model.access">
+            <field name="name">Supervisors access</field>
+            <field name="model_id" ref="model_stage_sec_production_employee"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_employee_OPERATOR" model="ir.model.access">
+            <field name="name">Operators access</field>
+            <field name="model_id" ref="model_stage_sec_production_employee"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+    </data>
+</odoo>

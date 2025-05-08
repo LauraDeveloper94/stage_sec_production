@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo>
+    <data> 
+        <record id="stage_sec_production.category" model="ir.module.category">
+            <field name="name">StageSec production module</field>
+        </record>
+
+        <record id="stage_sec_production.group_CEO" model="res.groups">
+            <field name="name">CEO</field>
+            <field name="category_id" ref="stage_sec_production.category"/>
+        </record>
+
+        <record id="stage_sec_production.group_HEAD" model="res.groups">
+            <field name="name">Department head</field>
+            <field name="category_id" ref="stage_sec_production.category"/>
+        </record>
+
+        <record id="stage_sec_production.group_SUPERVISOR" model="res.groups">
+            <field name="name">Section supervisors</field>
+            <field name="category_id" ref="stage_sec_production.category"/>
+        </record>
+
+        <record id="stage_sec_production.group_OPERATOR" model="res.groups">
+            <field name="name">Operators</field>
+            <field name="category_id" ref="stage_sec_production.category"/>
+        </record>
+    </data>
+</odoo>
