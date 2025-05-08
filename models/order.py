@@ -18,6 +18,10 @@ class Order(models.Model):
     client_id = fields.Many2one('stage_sec_production.client') 
     product_ids = fields.Many2many('stage_sec_production.product', 'order_product_rel', 'order_id', 'product_id') 
 
+    _sql_constraints = [
+    ('unique_order_number', 'unique(order_number)', 'The order number must be unique.')
+    ]
+
     @api.constrains('total_price')
     def _check_total_price(self):
         for i in self:

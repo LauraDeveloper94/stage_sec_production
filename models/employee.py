@@ -16,11 +16,12 @@ class Employee(models.Model):
     surname2 = fields.Char(string = "Second surname", size=20)
     phone_number = fields.Char(string = "Phone number", size=15)
     type = fields.Selection(
-        [('engineer', 'Engineer'), ('cutter', 'Cutter'), ('welder', 'Welder')],
+        [('painter', 'Painter'), ('cutter', 'Cutter'), ('welder', 'Welder'), ('assembler', 'assembler')],
         string="Type", required=True
     )
     address = fields.Char(string = "Address", required=True, size=100)
     position = fields.Char(string = "Employee position", required=True)
+    is_available = fields.Boolean(string="Available", default=True)
 
     section_id = fields.Many2one('stage_sec_production.section')
     production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_employee_rel', 'employee_id', 'production_order_id')

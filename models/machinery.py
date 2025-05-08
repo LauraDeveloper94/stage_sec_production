@@ -9,13 +9,19 @@ class Machinery(models.Model):
     
     name = fields.Char(string = "Name", required=True, size=50)
     location = fields.Char(string = "Location", required=True, size=100)
-    type = fields.Char(string= "Type", required=True)
+    type = fields.Selection([
+        ('cut', 'cut'),
+        ('assembly', 'assembly'),
+        ('welding', 'welding'),
+        ('paint', 'paint')
+    ], string="Tipo", required=True)
     status = fields.Char(string = "Status", required=True, size=50) 
     installation_date = fields.Date(string = "Installation date", required=True)
     next_maintenance_date = fields.Date(string = "Next maintenance date", required=True)
     operational_hours = fields.Float(string = "Operational hours", required=True)
     maintenance_interval = fields.Float(string = "Maintenance interval", required=True)
     last_maintenance_date = fields.Date(string = "Last maintenance date", required=True)
+    is_available = fields.Boolean(string="Available", default=True)
 
     production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_machinery_rel', 'machinery_id', 'production_order_id')
     manufacturing_process_ids = fields.One2many('stage_sec_production.manufacturing_process', 'machinery_id') 

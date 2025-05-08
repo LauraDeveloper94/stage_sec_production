@@ -8,17 +8,32 @@ class Manufacturing(models.Model):
     _description = 'Manufacturing'
     
     name = fields.Char(string="Name", required=True)
-    quantity = fields.Integer(string="Quantity", required=True)
-    phase = fields.Char(string="Phase", required=True)
+    reference = fields.Integer(string="Reference", required=True)
+    phase = fields.Selection([
+        ('not_assigned', 'not assigned'),
+        ('cutting', 'cutting'),
+        ('assembling', 'assembling'),
+        ('welding', 'welding'),
+        ('painting', 'painting'),
+    ], string="Phase", required=True)
     start_date = fields.Date(string = "Start date", required=True)
     end_date = fields.Date(string = "End date", required=True)
+    status = fields.Selection([
+        ('pending', 'pending'),
+        ('in_progress', 'in progress'),
+        ('finished', 'finished')
+    ], default='pending')
 
-    production_order_ids = fields.Many2many('stage_sec_production.production_order', 'production_manufacturing_rel', 'manufacturing_id', 'production_order_id')
+    production_order_id = fields.Many2one('stage_sec_production.production_order')
     material_ids = fields.Many2many('stage_sec_production.material', 'manufacturing_material_rel', 'manufacturing_id', 'material_id')
     quality_control_ids = fields.One2many('stage_sec_production.quality_control', 'manufacturing_id')
     inventory_id = fields.Many2one('stage_sec_production.inventory')
-    product_id = fields.Many2one('stage_sec_production.product', compute='_compute_product', inverse='_inverse_product') #1:1 con producto
+    product_id = fields.Many2one('stage_sec_production.product', compute='_compute_product', inverse='_inverse_product') 
     manufacturing_process_ids = fields.One2many('stage_sec_production.manufacturing_process', 'manufacturing_id')
+
+    _sql_constraints = [
+        ('unique_reference', 'unique(reference)', 'The reference must be unique.')
+    ]
     
     def _compute_product(self):
         for rec in self:
@@ -40,3 +55,5 @@ class Manufacturing(models.Model):
         for i in self:
             if i.quantity < 0:
                 raise ValidationError("Quantity cannot be negative.")
+            
+    
