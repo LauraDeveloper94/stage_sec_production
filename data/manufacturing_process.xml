@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="manufacturing_process_1" model="stage_sec_production.manufacturing_process">
+      <field name="start_date">2025-04-01</field>
+      <field name="end_date">2025-04-03</field>
+      <field name="notes">Proceso de corte de torres</field>
+      <field name="manufacturing_id" ref="stage_sec_production_manufacturing_1"/>
+      <field name="machinery_id" ref="stage_sec_production_machinery_1"/>
+      <field name="employee_id" ref="stage_sec_production_employee_1"/>
+    </record>
+
+    <record id="manufacturing_process_2" model="stage_sec_production.manufacturing_process">
+      <field name="start_date">2025-04-05</field>
+      <field name="end_date">2025-04-07</field>
+      <field name="notes">Proceso de soldadura</field>
+      <field name="manufacturing_id" ref="stage_sec_production_manufacturing_2"/>
+      <field name="machinery_id" ref="stage_sec_production_machinery_2"/>
+      <field name="employee_id" ref="stage_sec_production_employee_2"/>
+    </record>
+
+  </data>
+</odoo>

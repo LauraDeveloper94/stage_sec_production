@@ -4,23 +4,27 @@
 
         <record id="stage_sec_production_manufacturing_1" model="stage_sec_production.manufacturing">
             <field name="name">Elevator Tower</field>
-            <field name="quantity">100</field>
-            <field name="phase">Cutting</field>
-            <field name="start_date">2025-04-01</field>
-            <field name="end_date">2025-04-05</field>
+            <field name="reference">13084</field>
+            <field name="phase">cutting</field>
+            <field name="status">pending</field>
+            <field name="start_date">2025-05-01</field>
+            <field name="end_date">2025-06-05</field>
             <field name="material_ids" eval="[(6, 0, [ref('stage_sec_production_material_1')])]"/>
             <field name="inventory_id" ref="stage_sec_production_inventory_1"/>
-            
+            <field name="production_order_id" ref="stage_sec_production_production_order_1"/>
+    
         </record>
         
         <record id="stage_sec_production_manufacturing_2" model="stage_sec_production.manufacturing">
             <field name="name">Concert Stage Plattform</field>
-            <field name="quantity">200</field>
-            <field name="phase">Welding</field>
-            <field name="start_date">2025-04-06</field>
-            <field name="end_date">2025-04-10</field>
+            <field name="reference">16484</field>
+            <field name="phase">welding</field>
+            <field name="status">pending</field>
+            <field name="start_date">2025-05-06</field>
+            <field name="end_date">2025-06-10</field>
             <field name="material_ids" eval="[(6, 0, [ref('stage_sec_production_material_2')])]"/>
             <field name="inventory_id" ref="stage_sec_production_inventory_2"/>
+            <field name="production_order_id" ref="stage_sec_production_production_order_2"/>
             
         </record>
         

@@ -10,7 +10,8 @@
             <field name="delivery_address">Avenida del Oeste, 14, Valencia</field>
             <field name="payment_method">Credit Card</field>
             <field name="payment_status">Unpaid</field>
-            <field name="client_id" ref="stage_sec_production_client_1"/> 
+            <field name="client_id" ref="stage_sec_production_client_1"/>
+            <field name="product_ids" eval="[(6, 0, [ref('stage_sec_production_product_1')])]"/> 
         </record>
         
         <record id="stage_sec_production_order_2" model="stage_sec_production.order">
@@ -22,6 +23,7 @@
             <field name="payment_method">Bank Transfer</field>
             <field name="payment_status">Paid</field>
             <field name="client_id" ref="stage_sec_production_client_2"/> 
+            <field name="product_ids" eval="[(6, 0, [ref('stage_sec_production_product_2')])]"/>
         </record>
         
     </data>
