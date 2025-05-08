@@ -38,6 +38,16 @@
         'data/employee.xml',
         'data/machinery.xml',
         'data/production_order.xml',
+        'data/manufacturing_process.xml',
+        'security/groups.xml',
+        'security/access.xml',
+        'security/rules.xml',
+        'reports/report.employee.xml',
+        'reports/report.machinery.xml',
+        'reports/report.production_order.xml',
+        'reports/report.order.xml',
+        'reports/report.client.xml',
+        'reports/report.supplier.xml',
     ],
 
     # only loaded in demonstration mode

@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+
+        <record id="order_pdf_report" model="ir.actions.report">
+            <field name="name">Ficha de Pedido</field>
+            <field name="model">stage_sec_production.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stage_sec_production.report_order</field>
+            <field name="binding_model_id" ref="model_stage_sec_production_order"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="print_report_name">'Ficha Pedido - %s' % (object.order_number)</field>
+        </record>
+        
+        <template id="report_order">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 style="text-align: center; font-size: 24px;">Ficha del Pedido</h2>
+                        <t t-foreach="docs" t-as="order">
+                            <table style="width: 100%; margin-top: 20px;">
+                                <tr>
+                                    <td><strong>Número de pedido:</strong></td>
+                                    <td><t t-esc="order.order_number"/></td>
+                                    <td><strong>Fecha:</strong></td>
+                                    <td><t t-esc="order.date"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Precio total:</strong></td>
+                                    <td><t t-esc="order.total_price"/></td>
+                                    <td><strong>Estado:</strong></td>
+                                    <td><t t-esc="order.status"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dirección de entrega:</strong></td>
+                                    <td colspan="3"><t t-esc="order.delivery_address"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Método de pago:</strong></td>
+                                    <td><t t-esc="order.payment_method"/></td>
+                                    <td><strong>Estado del pago:</strong></td>
+                                    <td><t t-esc="order.payment_status"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cliente:</strong></td>
+                                    <td colspan="3"><t t-esc="order.client_id.name"/> <t t-esc="order.client_id.surname1"/> <t t-esc="order.client_id.surname2"/></td>
+                                </tr>
+                            </table>
+
+                            <div style="margin-top: 30px;">
+                                <strong>Productos del pedido:</strong>
+                                <ul>
+                                    <t t-foreach="order.product_ids" t-as="product">
+                                        <li><t t-esc="product.name"/></li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </t>
+                    </main>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

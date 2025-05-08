@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+
+        <record id="production_order_pdf_report" model="ir.actions.report">
+            <field name="name">Ficha orden de producción</field>
+            <field name="model">stage_sec_production.production_order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stage_sec_production.report_production_order</field>
+            <field name="binding_model_id" ref="model_stage_sec_production_production_order"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">form</field>
+            <field name="print_report_name">'Orden producción - %s' % (object.id)</field>
+        </record>
+
+        <template id="report_production_order">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 style="text-align: center; font-size: 24px;">Ficha de Orden de Producción</h2>
+                        <t t-foreach="docs" t-as="production_order">
+                            <table style="width: 100%; margin-top: 20px;">
+                                <tr>
+                                    <td><strong>Fecha de inicio:</strong></td>
+                                    <td><t t-esc="production_order.start_date"/></td>
+                                    <td><strong>Fecha de fin:</strong></td>
+                                    <td><t t-esc="production_order.end_date"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Estado:</strong></td>
+                                    <td><t t-esc="production_order.status"/></td>
+                                    <td><strong>Nivel de prioridad:</strong></td>
+                                    <td><t t-esc="production_order.priority_level"/></td>
+                                </tr>
+                            </table>
+
+                            <h5 style="margin-top: 30px;">Empleados asignados</h5>
+                            <ul>
+                                <t t-foreach="production_order.employee_ids" t-as="emp">
+                                    <li><t t-esc="emp.name"/> <t t-esc="emp.surname1"/> <t t-esc="emp.surname2"/></li>
+                                </t>
+                            </ul>
+
+                            <h5 style="margin-top: 30px;">Maquinaria asignada</h5>
+                            <ul>
+                                <t t-foreach="production_order.machinery_ids" t-as="mach">
+                                    <li><t t-esc="mach.name"/> — <t t-esc="mach.type"/></li>
+                                </t>
+                            </ul>
+
+                            <h5 style="margin-top: 30px;">Manufacturados relacionados</h5>
+                            <ul>
+                                <t t-foreach="production_order.manufacturing_ids" t-as="manu">
+                                    <li>Referencia: <t t-esc="manu.reference"/></li>
+                                </t>
+                            </ul>
+                        </t>
+                    </main>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

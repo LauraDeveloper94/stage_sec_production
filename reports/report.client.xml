@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        
+        <record id="client_pdf_report" model="ir.actions.report">
+            <field name="name">Ficha del cliente</field>
+            <field name="model">stage_sec_production.client</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stage_sec_production.report_client</field>
+            <field name="binding_model_id" ref="model_stage_sec_production_client"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="print_report_name">'Ficha cliente - %s' % (object.name)</field>
+        </record>
+
+        <template id="report_client">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 style="text-align: center; font-size: 24px;">Ficha del cliente</h2>
+                        <t t-foreach="docs" t-as="client">
+                            <table style="width: 100%; margin-top: 20px;">
+                                <tr>
+                                    <td><strong>Nombre:</strong></td>
+                                    <td><t t-esc="client.name"/></td>
+                                    <td><strong>Email:</strong></td>
+                                    <td><t t-esc="client.email"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Primer apellido:</strong></td>
+                                    <td><t t-esc="client.surname1"/></td>
+                                    <td><strong>Segundo apellido:</strong></td>
+                                    <td><t t-esc="client.surname2 or ''"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Teléfono:</strong></td>
+                                    <td><t t-esc="client.phone_number or ''"/></td>
+                                    <td><strong>Dirección:</strong></td>
+                                    <td><t t-esc="client.address"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tipo:</strong></td>
+                                    <td colspan="3"><t t-esc="dict(client._fields['type'].selection).get(client.type) or client.type"/></td>
+                                </tr>
+                            </table>
+
+                            <div style="margin-top: 30px;">
+                                <strong>Pedidos del cliente:</strong>
+                                <ul>
+                                    <t t-if="client.order_ids">
+                                        <t t-foreach="client.order_ids" t-as="order">
+                                            <li>
+                                                Pedido nº <t t-esc="order.order_number or order.id"/> - 
+                                                <t t-esc="order.date or ''"/>
+                                            </li>
+                                        </t>
+                                    </t>
+                                    <t t-if="not client.order_ids">
+                                        <li>Este cliente no tiene pedidos registrados.</li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </t>
+                    </main>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

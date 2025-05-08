@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="supplier_pdf_report" model="ir.actions.report">
+            <field name="name">Ficha del proveedor</field>
+            <field name="model">stage_sec_production.supplier</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stage_sec_production.report_supplier</field>
+            <field name="binding_model_id" ref="model_stage_sec_production_supplier"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="print_report_name">'Ficha proveedor - %s' % (object.name)</field>
+        </record>
+
+        <template id="report_supplier">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 style="text-align: center; font-size: 24px;">Ficha del proveedor</h2>
+                        <t t-foreach="docs" t-as="supplier">
+                            <table style="width: 100%; margin-top: 20px;">
+                                <tr>
+                                    <td><strong>Nombre:</strong></td>
+                                    <td><t t-esc="supplier.name"/></td>
+                                    <td><strong>Email:</strong></td>
+                                    <td><t t-esc="supplier.email"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Primer apellido:</strong></td>
+                                    <td><t t-esc="supplier.surname1"/></td>
+                                    <td><strong>Segundo apellido:</strong></td>
+                                    <td><t t-esc="supplier.surname2 or ''"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Teléfono:</strong></td>
+                                    <td><t t-esc="supplier.phone_number or ''"/></td>
+                                    <td><strong>Dirección:</strong></td>
+                                    <td><t t-esc="supplier.address"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tipo:</strong></td>
+                                    <td colspan="3"><t t-esc="dict(supplier._fields['type'].selection).get(supplier.type) or supplier.type"/></td>
+                                </tr>
+                            </table>
+
+                            <div style="margin-top: 30px;">
+                                <strong>Materiales suministrados:</strong>
+                                <ul>
+                                    <t t-if="supplier.material_ids">
+                                        <t t-foreach="supplier.material_ids" t-as="material">
+                                            <li><t t-esc="material.name"/></li>
+                                        </t>
+                                    </t>
+                                    <t t-if="not supplier.material_ids">
+                                        <li>Este proveedor no tiene materiales asignados.</li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </t>
+                    </main>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>

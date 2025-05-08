@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record id="machinery_pdf_report" model="ir.actions.report">
+            <field name="name">Ficha maquinaria</field>
+            <field name="model">stage_sec_production.machinery</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stage_sec_production.report_machinery</field>
+            <field name="binding_model_id" ref="model_stage_sec_production_machinery"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">form</field>
+            <field name="print_report_name">'Ficha maquinaria - %s' % (object.name)</field>
+        </record>
+
+        <template id="report_machinery">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 style="text-align: center; font-size: 24px;">Ficha de maquinaria</h2>
+                        <t t-foreach="docs" t-as="machinery">
+                            <table style="width: 100%; margin-top: 20px;">
+                                <tr>
+                                    <td><strong>Nombre:</strong></td>
+                                    <td><t t-esc="machinery.name"/></td>
+                                    <td><strong>Ubicación:</strong></td>
+                                    <td><t t-esc="machinery.location"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tipo:</strong></td>
+                                    <td><t t-esc="machinery.type"/></td>
+                                    <td><strong>Estado:</strong></td>
+                                    <td><t t-esc="machinery.status"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fecha instalación:</strong></td>
+                                    <td><t t-esc="machinery.installation_date"/></td>
+                                    <td><strong>Último mantenimiento:</strong></td>
+                                    <td><t t-esc="machinery.last_maintenance_date"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Próximo mantenimiento:</strong></td>
+                                    <td><t t-esc="machinery.next_maintenance_date"/></td>
+                                    <td><strong>Intervalo mantenimiento:</strong></td>
+                                    <td><t t-esc="machinery.maintenance_interval"/> h</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Horas operativas:</strong></td>
+                                    <td><t t-esc="machinery.operational_hours"/> h</td>
+                                </tr>
+                            </table>
+                        </t>
+                    </main>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
