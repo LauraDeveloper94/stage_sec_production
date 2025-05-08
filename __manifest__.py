@@ -48,6 +48,7 @@
         'reports/report.order.xml',
         'reports/report.client.xml',
         'reports/report.supplier.xml',
+        'reports/report.manufacturing.xml',
     ],
 
     # only loaded in demonstration mode

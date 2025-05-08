@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="manufacturing_pdf_report" model="ir.actions.report">
+            <field name="name">Manufacturing Report</field>
+            <field name="model">stage_sec_production.manufacturing</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">stage_sec_production.report_manufacturing</field>
+            <field name="binding_model_id" ref="model_stage_sec_production_manufacturing"/>
+            <field name="binding_type">report</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="print_report_name">'Manufacturing - %s' % (object.name)</field>
+        </record>
+
+        <template id="report_manufacturing">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <main>
+                        <h2 style="text-align: center; font-size: 24px;">Manufacturing Report</h2>
+                        <t t-foreach="docs" t-as="manufacturing">
+                            <table style="width: 100%; margin-top: 20px;">
+                                <tr>
+                                    <td><strong>Name:</strong></td>
+                                    <td><t t-esc="manufacturing.name"/></td>
+                                    <td><strong>Reference:</strong></td>
+                                    <td><t t-esc="manufacturing.reference"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phase:</strong></td>
+                                    <td><t t-esc="manufacturing.phase"/></td>
+                                    <td><strong>Status:</strong></td>
+                                    <td><t t-esc="manufacturing.status"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Start date:</strong></td>
+                                    <td><t t-esc="manufacturing.start_date"/></td>
+                                    <td><strong>End date:</strong></td>
+                                    <td><t t-esc="manufacturing.end_date"/></td>
+                                </tr>
+                            </table>
+
+                            <div style="margin-top: 20px;">
+                                <strong>Materials used:</strong>
+                                <ul>
+                                    <t t-foreach="manufacturing.material_ids" t-as="material">
+                                        <li><t t-esc="material.name"/></li>
+                                    </t>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 20px;">
+                                <strong>Quality Controls:</strong>
+                                <ul>
+                                    <t t-foreach="manufacturing.quality_control_ids" t-as="qc">
+                                        <li><t t-esc="qc.status"/></li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </t>
+                    </main>
+                </div>
+            </t>
+        </template>
+
+    </data>
+</odoo>
