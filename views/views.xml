@@ -91,6 +91,14 @@
               <field name="email"/>
               <field name="phone_number"/>
             </group>
+            <group string="Materiales">
+              <field name="material_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="type"/>            
+                </tree>
+              </field>  
+            </group>
           </group>
         </form>
       </field>
@@ -110,6 +118,7 @@
           <field name="address"/>
           <field name="type"/>
           <field name="position"/>
+          <field name="is_available"/>
         </tree>
       </field>
     </record>
@@ -133,6 +142,7 @@
             </group>
             <group string="Información adicional">
               <field name="type"/>
+              <field name="is_available"/>
               <field name="position"/>
             </group>
           </group>
@@ -283,7 +293,16 @@
               <field name="stock_quantity"/>
               <field name="availability"/>
               <field name="stock_alert"/>          
-            </group>         
+            </group> 
+            <group string="Proveedor">
+              <field name="supplier_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="surname1"/>            
+                  <field name="surname2"/>
+                </tree>
+              </field>  
+            </group>   
           </group>         
         </form>
       </field>
@@ -295,8 +314,9 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="quantity"/>
+          <field name="reference"/>
           <field name="phase"/>
+          <field name="status"/>
           <field name="start_date"/>
           <field name="end_date"/>
         </tree>
@@ -311,11 +331,13 @@
           <group col="2">
             <group string="Datos manufacturado">
               <field name="name"/>
-              <field name="quantity"/>
+              <field name="reference"/>
               <field name="phase"/>
+              <field name="status"/>
               <field name="start_date"/>
               <field name="end_date"/>
-              <field name="inventory_id"/>            
+              <field name="inventory_id"/>
+              <field name="production_order_id"/>              
             </group>
             <group string="Lista materiales">
               <field name="material_ids">
@@ -323,7 +345,7 @@
                   <field name="name"/>
                 </tree>
               </field>
-            </group>           
+            </group>             
           </group>         
         </form>
       </field>
@@ -351,6 +373,7 @@
           <group col="2">
             <group string="Datos del producto">
               <field name="name"/>
+              <field name="quantity"/>
               <field name="description"/>
               <field name="price"/>
               <field name="order_id"/>
@@ -398,6 +421,14 @@
               <field name="payment_method"/>
               <field name="payment_status"/>
             </group>
+            <group string="Productos">
+              <field name="product_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="quantity"/>
+                </tree>
+              </field>
+            </group>
           </group>         
         </form>
       </field>
@@ -408,10 +439,10 @@
       <field name="model">stage_sec_production.production_order</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="start_date" />
-          <field name="status" />
-          <field name="end_date" />
-          <field name="priority_level" />
+          <field name="start_date"/>
+          <field name="status"/>
+          <field name="end_date"/>
+          <field name="priority_level"/>
         </tree>
       </field>
     </record>
@@ -421,12 +452,19 @@
       <field name="model">stage_sec_production.production_order</field>
       <field name="arch" type="xml">
         <form>
+          <header>          
+            <button name="action_set_in_progress"
+                    type="object"
+                    string="Iniciar producción"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('status', '!=', 'not_started')]}"/>
+          </header>
           <group>
             <group string="Datos órden de producción">
-              <field name="start_date"/>
-              <field name="status"/>
-              <field name="end_date"/>            
-              <field name="priority_level"/>
+                <field name="start_date"/>
+                <field name="status"/>
+                <field name="end_date"/>            
+                <field name="priority_level"/>
             </group>
             <group string="Empleados">
               <field name="employee_ids">
@@ -441,7 +479,8 @@
             <group string="Manufacturado">
               <field name="manufacturing_ids">
                 <tree>
-                  <field name="quantity"/>
+                  <field name="name"/>
+                  <field name="reference"/>
                   <field name="phase"/>
                 </tree>
               </field>
@@ -475,6 +514,7 @@
           <field name="operational_hours"/>
           <field name="maintenance_interval"/>
           <field name="last_maintenance_date"/>
+          <field name="is_available"/>
         </tree>
       </field>
     </record>
@@ -490,7 +530,8 @@
               <field name="location"/>
               <field name="type"/>
               <field name="installation_date"/>
-              <field name="status"/>            
+              <field name="status"/> 
+              <field name="is_available"/>            
             </group>
             <group string="Mantenimiento">
               <field name="operational_hours"/>
@@ -515,6 +556,59 @@
           <field name="approved_quantity"/>
           <field name="rejected_quantity"/>
         </tree>
+      </field>
+    </record>
+
+    <record id="view_form_quality_control" model="ir.ui.view">
+      <field name="name">Formulario control de calidad</field>
+      <field name="model">stage_sec_production.quality_control</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <group string="Datos control calidad">
+              <field name="manufacturing_id"/>
+              <field name="date"/>
+              <field name="status"/>
+              <field name="qc_report"/>
+            </group>
+            <group string="Resultados">
+              <field name="retest_required"/>
+              <field name="approved_quantity"/>
+              <field name="rejected_quantity"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_manufacturing_process" model="ir.ui.view">
+      <field name="name">Lista de proceso de manufactura</field>
+      <field name="model">stage_sec_production.manufacturing_process</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="start_date"/>
+          <field name="end_date"/>
+          <field name="notes"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_form_manufacturing_process" model="ir.ui.view">
+      <field name="name">Formulario proceso de manufactura</field>
+      <field name="model">stage_sec_production.manufacturing_process</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group string="Datos proceso manufactura">
+              <field name="start_date"/>
+              <field name="end_date"/>
+              <field name="notes"/>
+              <field name="employee_id"/>
+              <field name="manufacturing_id"/>
+              <field name="machinery_id"/>
+            </group>
+          </group>
+        </form>
       </field>
     </record>
 
