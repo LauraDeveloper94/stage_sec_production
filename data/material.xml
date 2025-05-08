@@ -12,6 +12,7 @@
             <field name="stock_max">100</field>
             <field name="stock_quantity">5</field>
             <field name="availability">50</field>
+            <field name="supplier_ids" eval="[(6, 0, [ref('stage_sec_production_supplier_1'),])]"/>
         </record>
 
         <record id="stage_sec_production_material_2" model="stage_sec_production.material">
@@ -24,6 +25,7 @@
             <field name="stock_max">150</field>
             <field name="stock_quantity">20</field>
             <field name="availability">80</field>
+            <field name="supplier_ids" eval="[(6, 0, [ref('stage_sec_production_supplier_1'),])]"/>
         </record>
         
     </data>

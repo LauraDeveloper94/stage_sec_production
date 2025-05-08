@@ -10,6 +10,7 @@
             <field name="phone_number">+34677888847</field>
             <field name="address">Calle Angel, 14, Valencia</field>
             <field name="type">raw_material</field> 
+            <field name="material_ids" eval="[(6, 0, [ref('stage_sec_production_material_1'),])]"/>
         </record>
         
         <record id="stage_sec_production_supplier_2" model="stage_sec_production.supplier">
@@ -20,6 +21,7 @@
             <field name="phone_number">+34674752233</field>
             <field name="address">Calle Mayor, 5, Mislata</field>
             <field name="type">finished_goods</field> 
+            <field name="material_ids" eval="[(6, 0, [ref('stage_sec_production_material_2'),])]"/>
         </record>
         
     </data>
