@@ -130,15 +130,15 @@
         <form>
           <group col="3">
             <group string="Datos">
-              <field name="id_number" />
-              <field name="name" />
-              <field name="surname1" />
-              <field name="surname2" />
+              <field name="id_number"/>
+              <field name="name"/>
+              <field name="surname1"/>
+              <field name="surname2"/>
             </group>
             <group string="Contacto">
-              <field name="address" />
-              <field name="email" />
-              <field name="phone_number" />
+              <field name="address"/>
+              <field name="email"/>
+              <field name="phone_number"/>
             </group>
             <group string="Información adicional">
               <field name="type"/>
@@ -155,12 +155,12 @@
       <field name="model">stage_sec_production.department</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name" />
-          <field name="location" />
-          <field name="description" />
-          <field name="number_employees" />
-          <field name="phone" />
-          <field name="email" />
+          <field name="name"/>
+          <field name="location"/>
+          <field name="description"/>
+          <field name="number_employees"/>
+          <field name="phone"/>
+          <field name="email"/>
         </tree>
       </field>
     </record>
@@ -440,7 +440,6 @@
       <field name="arch" type="xml">
         <tree>
           <field name="start_date"/>
-          <field name="status"/>
           <field name="end_date"/>
           <field name="priority_level"/>
         </tree>
@@ -458,11 +457,18 @@
                     string="Iniciar producción"
                     class="oe_highlight"
                     attrs="{'invisible': [('status', '!=', 'not_started')]}"/>
+            
+            <button name="action_advance_phase"
+                    type="object"
+                    string="Avanzar fase"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('status', '!=', 'in_progress')]}"/>
+            
+            <field name="status" widget="statusbar" statusbar_visible="not_started,in_progress,finished"/>
           </header>
           <group>
             <group string="Datos órden de producción">
                 <field name="start_date"/>
-                <field name="status"/>
                 <field name="end_date"/>            
                 <field name="priority_level"/>
             </group>
@@ -508,6 +514,7 @@
           <field name="name"/>
           <field name="location"/>
           <field name="type"/>
+          <field name="product_qty"/>
           <field name="status"/>
           <field name="installation_date"/>
           <field name="next_maintenance_date"/>
@@ -529,6 +536,7 @@
               <field name="name"/>
               <field name="location"/>
               <field name="type"/>
+              <field name="product_qty"/>
               <field name="installation_date"/>
               <field name="status"/> 
               <field name="is_available"/>            
