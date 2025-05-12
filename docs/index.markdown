@@ -14,3 +14,4 @@ title: STAGESEC PRODUCTION
 - <a href="{{ '/diagramas_flujo.html' | relative_url }}">Diagramas de flujo</a>
 - <a href="{{ '/entidad_relacion.html' | relative_url }}">Diagrama entidad relación</a>
 - <a href="{{ '/comunicacion_modulos.html' | relative_url }}">Comunicación con otros módulos</a>
+- <a href="{{ '/configuracion_instalacion.html' | relative_url }}">Información sobre el proceso de instalación y configuración</a>
