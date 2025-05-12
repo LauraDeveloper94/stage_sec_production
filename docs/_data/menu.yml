@@ -20,3 +20,5 @@
       name: Esquema relacional
     - id: comunicacion_modulos
       name: Comunicación con otros módulos
+    - id: configuracion_instalacion
+      name: Configuración e instalación del módulo
