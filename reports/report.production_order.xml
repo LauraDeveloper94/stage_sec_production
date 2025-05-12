@@ -8,7 +8,7 @@
             <field name="report_name">stage_sec_production.report_production_order</field>
             <field name="binding_model_id" ref="model_stage_sec_production_production_order"/>
             <field name="binding_type">report</field>
-            <field name="binding_view_types">form</field>
+            <field name="binding_view_types">list, form</field>
             <field name="print_report_name">'Orden producción - %s' % (object.id)</field>
         </record>
 
