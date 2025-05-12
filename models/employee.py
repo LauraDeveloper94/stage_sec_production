@@ -16,7 +16,7 @@ class Employee(models.Model):
     surname2 = fields.Char(string = "Second surname", size=20)
     phone_number = fields.Char(string = "Phone number", size=15)
     type = fields.Selection(
-        [('painter', 'Painter'), ('cutter', 'Cutter'), ('welder', 'Welder'), ('assembler', 'assembler')],
+        [('painter', 'painter'), ('cutter', 'cutter'), ('welder', 'welder'), ('assembler', 'assembler')],
         string="Type", required=True
     )
     address = fields.Char(string = "Address", required=True, size=100)

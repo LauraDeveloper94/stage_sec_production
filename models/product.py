@@ -8,7 +8,6 @@ class Product(models.Model):
     _description = 'Product'
     
     name = fields.Char(string="Name", required=True, size=50)
-    quantity = fields.Integer(string="Quantity", required=True)
     description = fields.Char(string="Description", required=True, size=200)
     price = fields.Float(string = "Price", required=True)
     dimensions = fields.Float(string = "Dimensions", required=True)

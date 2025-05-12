@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+import requests
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class Manufacturing(models.Model):
     
@@ -16,8 +20,8 @@ class Manufacturing(models.Model):
         ('welding', 'welding'),
         ('painting', 'painting'),
     ], string="Phase", required=True)
-    start_date = fields.Date(string = "Start date", required=True)
-    end_date = fields.Date(string = "End date", required=True)
+    start_date = fields.Date(string = "Start date")
+    end_date = fields.Date(string = "End date")
     status = fields.Selection([
         ('pending', 'pending'),
         ('in_progress', 'in progress'),
@@ -56,4 +60,17 @@ class Manufacturing(models.Model):
             if i.quantity < 0:
                 raise ValidationError("Quantity cannot be negative.")
             
+    def cron_get_all_machinery_data(self):
+        machinery_types = ["cut", "assembly", "welding", "paint"]
+        for m_type in machinery_types:
+            try:
+                url = f"http://localhost:5000/machineryData/{m_type}"
+                response = requests.get(url)
+                if response.status_code == 200:
+                    data = response.json()
+                    _logger.info("Received data for '%s': %s", m_type, data)
+                else:
+                    _logger.error("Error from obtaining data from '%s': %s", m_type, response.status_code)
+            except Exception as e:
+                _logger.exception("Error from obtaining data from '%s': %s", m_type, e)
     

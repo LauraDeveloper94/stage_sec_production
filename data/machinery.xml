@@ -6,6 +6,7 @@
             <field name="name">Cutting Saw</field>
             <field name="location">Warehouse 1</field>
             <field name="type">cut</field>
+            <field name="product_qty">2</field>
             <field name="status">Operational</field>
             <field name="installation_date">2023-05-10</field>
             <field name="next_maintenance_date">2025-05-10</field>
@@ -19,13 +20,14 @@
             <field name="name">MIG Welder</field>
             <field name="location">Warehouse 2</field>
             <field name="type">welding</field>
-            <field name="status">Under Maintenance</field>
+            <field name="product_qty">4</field>
+            <field name="status">Operational</field>
             <field name="installation_date">2022-08-01</field>
             <field name="next_maintenance_date">2025-06-01</field>
             <field name="operational_hours">3200</field>
             <field name="maintenance_interval">600</field>
             <field name="last_maintenance_date">2024-12-01</field>
-            <field name="is_available">False</field>
+            <field name="is_available">True</field>
         </record>
 
     </data>

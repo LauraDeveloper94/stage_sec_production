@@ -15,6 +15,7 @@ class Machinery(models.Model):
         ('welding', 'welding'),
         ('paint', 'paint')
     ], string="Tipo", required=True)
+    product_qty = fields.Float(string="Cantidad de producto")
     status = fields.Char(string = "Status", required=True, size=50) 
     installation_date = fields.Date(string = "Installation date", required=True)
     next_maintenance_date = fields.Date(string = "Next maintenance date", required=True)
@@ -27,7 +28,6 @@ class Machinery(models.Model):
     manufacturing_process_ids = fields.One2many('stage_sec_production.manufacturing_process', 'machinery_id') 
 
     @api.constrains('last_maintenance_date', 'next_maintenance_date')
-
     def _check_maintenance_dates(self):
         for i in self: 
             if i.last_maintenance_date and i.next_maintenance_date:
@@ -37,3 +37,5 @@ class Machinery(models.Model):
             if i.installation_date and i.last_maintenance_date:
                 if i.installation_date > i.last_maintenance_date:
                     raise ValidationError("The installation date must be earlier than the last maintenance date.")
+
+

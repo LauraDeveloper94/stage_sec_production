@@ -373,7 +373,6 @@
           <group col="2">
             <group string="Datos del producto">
               <field name="name"/>
-              <field name="quantity"/>
               <field name="description"/>
               <field name="price"/>
               <field name="order_id"/>
@@ -425,7 +424,6 @@
               <field name="product_ids">
                 <tree>
                   <field name="name"/>
-                  <field name="quantity"/>
                 </tree>
               </field>
             </group>
