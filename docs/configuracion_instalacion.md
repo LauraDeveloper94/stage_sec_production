@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Instalación y configuración StageSec"
+description: "Proporciona información importante para la instalación y configuración"
+date: 2025-05-12
+---
+
 # Documentación de Instalación y Configuración del módulo StageSec
 
 ## 1. URL del Repositorio
