@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        #Permisos CEO
+
         <record id="access_stage_sec_production_employee_CEO" model="ir.model.access">
-            <field name="name">CEO access</field>
+            <field name="name">CEO access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
             <field name="group_id" ref="stage_sec_production.group_CEO"/>
             <field name="perm_read" eval="1"/>
@@ -10,9 +12,141 @@
             <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="1"/>
         </record>
+
+        <record id="access_stage_sec_production_client_CEO" model="ir.model.access">
+            <field name="name">CEO access client</field>
+            <field name="model_id" ref="model_stage_sec_production_client"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_supplier_CEO" model="ir.model.access">
+            <field name="name">CEO access supplier</field>
+            <field name="model_id" ref="model_stage_sec_production_supplier"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_CEO" model="ir.model.access">
+            <field name="name">CEO access manufacturing</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_department_CEO" model="ir.model.access">
+            <field name="name">CEO access department</field>
+            <field name="model_id" ref="model_stage_sec_production_department"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_section_CEO" model="ir.model.access">
+            <field name="name">CEO access section</field>
+            <field name="model_id" ref="model_stage_sec_production_section"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_inventory_CEO" model="ir.model.access">
+            <field name="name">CEO access section</field>
+            <field name="model_id" ref="model_stage_sec_production_inventory"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_production_order_CEO" model="ir.model.access">
+            <field name="name">CEO access production order</field>
+            <field name="model_id" ref="model_stage_sec_production_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_order_CEO" model="ir.model.access">
+            <field name="name">CEO access order</field>
+            <field name="model_id" ref="model_stage_sec_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_process_CEO" model="ir.model.access">
+            <field name="name">CEO access manufacturing process</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing_process"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record> 
+
+        <record id="access_stage_sec_production_material_CEO" model="ir.model.access">
+            <field name="name">CEO access material</field>
+            <field name="model_id" ref="model_stage_sec_production_material"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_quality_control_CEO" model="ir.model.access">
+            <field name="name">CEO access quality control</field>
+            <field name="model_id" ref="model_stage_sec_production_quality_control"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_machinery_CEO" model="ir.model.access">
+            <field name="name">CEO access machinery</field>
+            <field name="model_id" ref="model_stage_sec_production_machinery"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_product_CEO" model="ir.model.access">
+            <field name="name">CEO access product</field>
+            <field name="model_id" ref="model_stage_sec_production_product"/>
+            <field name="group_id" ref="stage_sec_production.group_CEO"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
     
+        #Permisos HEAD
+
         <record id="access_stage_sec_production_employee_HEAD" model="ir.model.access">
-            <field name="name">Head access</field>
+            <field name="name">HEAD access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
             <field name="group_id" ref="stage_sec_production.group_HEAD"/>
             <field name="perm_read" eval="1"/>
@@ -20,9 +154,141 @@
             <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="1"/>
         </record>
-                
+
+        <record id="access_stage_sec_production_client_HEAD" model="ir.model.access">
+            <field name="name">HEAD access client</field>
+            <field name="model_id" ref="model_stage_sec_production_client"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_supplier_HEAD" model="ir.model.access">
+            <field name="name">HEAD access supplier</field>
+            <field name="model_id" ref="model_stage_sec_production_supplier"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_HEAD" model="ir.model.access">
+            <field name="name">HEAD access manufacturing</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_department_HEAD" model="ir.model.access">
+            <field name="name">HEAD access department</field>
+            <field name="model_id" ref="model_stage_sec_production_department"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_section_HEAD" model="ir.model.access">
+            <field name="name">HEAD access section</field>
+            <field name="model_id" ref="model_stage_sec_production_section"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_inventory_HEAD" model="ir.model.access">
+            <field name="name">HEAD access section</field>
+            <field name="model_id" ref="model_stage_sec_production_inventory"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_production_order_HEAD" model="ir.model.access">
+            <field name="name">HEAD access production order</field>
+            <field name="model_id" ref="model_stage_sec_production_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_order_HEAD" model="ir.model.access">
+            <field name="name">HEAD access order</field>
+            <field name="model_id" ref="model_stage_sec_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_process_HEAD" model="ir.model.access">
+            <field name="name">HEAD access manufacturing process</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing_process"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record> 
+
+        <record id="access_stage_sec_production_material_HEAD" model="ir.model.access">
+            <field name="name">HEAD access material</field>
+            <field name="model_id" ref="model_stage_sec_production_material"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_quality_control_HEAD" model="ir.model.access">
+            <field name="name">HEAD access quality control</field>
+            <field name="model_id" ref="model_stage_sec_production_quality_control"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_machinery_HEAD" model="ir.model.access">
+            <field name="name">HEAD access machinery</field>
+            <field name="model_id" ref="model_stage_sec_production_machinery"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_product_HEAD" model="ir.model.access">
+            <field name="name">HEAD access product</field>
+            <field name="model_id" ref="model_stage_sec_production_product"/>
+            <field name="group_id" ref="stage_sec_production.group_HEAD"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        #Permisos SUPERVISOR
+
         <record id="access_stage_sec_production_employee_SUPERVISOR" model="ir.model.access">
-            <field name="name">Supervisors access</field>
+            <field name="name">SUPERVISOR access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
             <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
             <field name="perm_read" eval="1"/>
@@ -31,14 +297,277 @@
             <field name="perm_unlink" eval="1"/>
         </record>
 
+        <record id="access_stage_sec_production_client_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access client</field>
+            <field name="model_id" ref="model_stage_sec_production_client"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_supplier_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access supplier</field>
+            <field name="model_id" ref="model_stage_sec_production_supplier"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access manufacturing</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_department_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access department</field>
+            <field name="model_id" ref="model_stage_sec_production_department"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_section_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access section</field>
+            <field name="model_id" ref="model_stage_sec_production_section"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_inventory_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access section</field>
+            <field name="model_id" ref="model_stage_sec_production_inventory"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_production_order_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access production order</field>
+            <field name="model_id" ref="model_stage_sec_production_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_order_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access order</field>
+            <field name="model_id" ref="model_stage_sec_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_process_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access manufacturing process</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing_process"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record> 
+
+        <record id="access_stage_sec_production_material_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access material</field>
+            <field name="model_id" ref="model_stage_sec_production_material"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_quality_control_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access quality control</field>
+            <field name="model_id" ref="model_stage_sec_production_quality_control"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_machinery_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access machinery</field>
+            <field name="model_id" ref="model_stage_sec_production_machinery"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="access_stage_sec_production_product_SUPERVISOR" model="ir.model.access">
+            <field name="name">SUPERVISOR access product</field>
+            <field name="model_id" ref="model_stage_sec_production_product"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+    
+        #Permisos OPERATOR
+
         <record id="access_stage_sec_production_employee_OPERATOR" model="ir.model.access">
-            <field name="name">Operators access</field>
+            <field name="name">OPERATOR access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_client_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access client</field>
+            <field name="model_id" ref="model_stage_sec_production_client"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_supplier_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access supplier</field>
+            <field name="model_id" ref="model_stage_sec_production_supplier"/>
+            <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access manufacturing</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing"/>
             <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
             <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
         </record>
+
+        <record id="access_stage_sec_production_department_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access department</field>
+            <field name="model_id" ref="model_stage_sec_production_department"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_section_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access section</field>
+            <field name="model_id" ref="model_stage_sec_production_section"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_inventory_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access inventory</field>
+            <field name="model_id" ref="model_stage_sec_production_inventory"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_production_order_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access production order</field>
+            <field name="model_id" ref="model_stage_sec_production_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_order_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access order</field>
+            <field name="model_id" ref="model_stage_sec_production_order"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_manufacturing_process_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access manufacturing process</field>
+            <field name="model_id" ref="model_stage_sec_production_manufacturing_process"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record> 
+
+        <record id="access_stage_sec_production_material_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access material</field>
+            <field name="model_id" ref="model_stage_sec_production_material"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_quality_control_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access quality control</field>
+            <field name="model_id" ref="model_stage_sec_production_quality_control"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_machinery_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access machinery</field>
+            <field name="model_id" ref="model_stage_sec_production_machinery"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
+        <record id="access_stage_sec_production_product_OPERATOR" model="ir.model.access">
+            <field name="name">OPERATOR access product</field>
+            <field name="model_id" ref="model_stage_sec_production_product"/>
+            <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+
     </data>
 </odoo>
