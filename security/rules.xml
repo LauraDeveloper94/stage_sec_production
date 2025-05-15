@@ -8,13 +8,6 @@
             <field name="domain_force">[('section_id', '=', user.employee_id.section_id.id)]</field>
         </record>
                 
-        <record id="rule_stage_sec_production_process_OPERATOR" model="ir.rule">
-            <field name="name">Manufacturing Process - Operator Section Rule</field>
-            <field name="model_id" ref="model_stage_sec_production_manufacturing_process"/>
-            <field name="groups" eval="[(4, ref('stage_sec_production.group_OPERATOR'))]"/>
-            <field name="domain_force">[('section_id', '=', user.employee_id.section_id.id)]</field>
-        </record>
+        </record> 
     </data>
 </odoo>
-
-    
