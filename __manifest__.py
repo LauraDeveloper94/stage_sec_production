@@ -22,7 +22,10 @@
 
     # always loaded
     'data': [
+        'security/groups.xml',
         'security/ir.model.access.csv',
+        'security/access.xml',
+        'security/rules.xml',
         'views/views.xml',
         'views/templates.xml',
         'data/client.xml',
@@ -39,9 +42,6 @@
         'data/machinery.xml',
         'data/production_order.xml',
         'data/manufacturing_process.xml',
-        'security/groups.xml',
-        'security/access.xml',
-        'security/rules.xml',
         'reports/report.employee.xml',
         'reports/report.machinery.xml',
         'reports/report.production_order.xml',

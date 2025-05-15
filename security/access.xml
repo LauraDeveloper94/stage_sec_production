@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        #Permisos CEO
 
-        <record id="access_stage_sec_production_employee_CEO" model="ir.model.access">
+<!--         <record id="access_stage_sec_production_employee_CEO" model="ir.model.access">
             <field name="name">CEO access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
             <field name="group_id" ref="stage_sec_production.group_CEO"/>
@@ -142,8 +141,6 @@
             <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="1"/>
         </record>
-    
-        #Permisos HEAD
 
         <record id="access_stage_sec_production_employee_HEAD" model="ir.model.access">
             <field name="name">HEAD access employee</field>
@@ -285,8 +282,6 @@
             <field name="perm_unlink" eval="1"/>
         </record>
 
-        #Permisos SUPERVISOR
-
         <record id="access_stage_sec_production_employee_SUPERVISOR" model="ir.model.access">
             <field name="name">SUPERVISOR access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
@@ -425,9 +420,8 @@
             <field name="perm_write" eval="1"/>
             <field name="perm_create" eval="1"/>
             <field name="perm_unlink" eval="1"/>
-        </record>
-    
-        #Permisos OPERATOR
+        </record> -->
+
 
         <record id="access_stage_sec_production_employee_OPERATOR" model="ir.model.access">
             <field name="name">OPERATOR access employee</field>
@@ -437,7 +431,7 @@
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
-        </record>
+        </record> 
 
         <record id="access_stage_sec_production_client_OPERATOR" model="ir.model.access">
             <field name="name">OPERATOR access client</field>
