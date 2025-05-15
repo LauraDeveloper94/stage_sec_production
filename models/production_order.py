@@ -89,8 +89,10 @@ class Production_order(models.Model):
 
         self.status = 'in_progress'
 
+        self.create_manufacturing_processes_for_phase(manufacturing, 'cutting')
+
     def advance_phase(self):
-        phase_sequence = ['cutting', 'assembling', 'welding', 'painting']
+        phase_sequence = ['cutting', 'assembling', 'welding', 'painting', 'completed']
         phase_config = {
             'cutting': {'employee': ('cutter', 2), 'machinery': ('cut', 1)},
             'assembling': {'employee': ('assembler', 2), 'machinery': ('assembly', 1)},
@@ -99,7 +101,7 @@ class Production_order(models.Model):
         }
 
         for manufacturing in self.manufacturing_ids:
-            if manufacturing.phase == 'not_assigned':
+            if manufacturing.phase in ['not_assigned', 'completed']:
                 continue  
 
             current_phase = manufacturing.phase
@@ -125,6 +127,7 @@ class Production_order(models.Model):
                 manufacturing.start_date = fields.Datetime.today()
                 manufacturing.status = 'in_progress'
 
+            if manufacturing.phase != 'completed':
                 emp_type, emp_count = phase_config[next_phase]['employee']
                 mach_type, mach_count = phase_config[next_phase]['machinery']
 
@@ -151,6 +154,60 @@ class Production_order(models.Model):
             if all(m.status == 'finished' for m in self.manufacturing_ids):
                 self.status = 'finished'
                 self.end_date = fields.Datetime.now()
+
+            self.create_manufacturing_processes_for_phase(manufacturing, next_phase)
+
+    def create_manufacturing_processes_for_phase(self, manufacturing, current_phase):
+        phase_config = {
+            'cutting': {'employee': ('cutter', 2), 'machinery': ('cut', 1)},
+            'assembling': {'employee': ('assembler', 2), 'machinery': ('assembly', 1)},
+            'welding': {'employee': ('welder', 1), 'machinery': ('welding', 1)},
+            'painting': {'employee': ('painter', 1), 'machinery': ('paint', 1)},
+            'completed': {'employee': (None, 0), 'machinery': (None, 0)},
+        }
+
+        if current_phase not in phase_config:
+            return
+
+        emp_type, _ = phase_config[current_phase]['employee']
+        mach_type, _ = phase_config[current_phase]['machinery']
+
+        if current_phase == 'completed':
+            self.env['stage_sec_production.manufacturing_process'].create({
+                'start_date': self.start_date,
+                'end_date': self.end_date,
+                'notes': f"Fase {current_phase} (finalizada)",
+                'manufacturing_id': manufacturing.id,
+                'employee_id': False,
+                'machinery_id': False,
+                })
+            return
+
+        empleados_usados = self.employee_ids.filtered(lambda e: e.type == emp_type)
+        maquinaria_usada = self.machinery_ids.filtered(lambda m: m.type == mach_type)
+
+        for empleado in empleados_usados:
+            for maquina in maquinaria_usada:
+                self.env['stage_sec_production.manufacturing_process'].create({
+                    'start_date': self.start_date,
+                    'end_date': self.end_date,
+                    'notes': f"Fase {current_phase}",
+                    'manufacturing_id': manufacturing.id,
+                    'employee_id': empleado.id,
+                    'machinery_id': maquina.id,
+                })
+
+    def action_view_manufacturing_processes(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Control órdenes de producción',
+            'view_mode': 'tree,form',
+            'res_model': 'stage_sec_production.manufacturing_process',
+            'domain': [('manufacturing_id', 'in', self.manufacturing_ids.ids)],
+            'target': 'current',
+        }
+
     
     #Libero los empleados y maquinaria y vuelvo el manufacturado a su estado inicial cuando borro una orden de producción
     def unlink(self):
@@ -160,13 +217,18 @@ class Production_order(models.Model):
             if production_order.machinery_ids:
                 production_order.machinery_ids.write({'is_available': True})
             if production_order.manufacturing_ids:
+
+                processes = self.env['stage_sec_production.manufacturing_process'].search([
+                ('manufacturing_id', 'in', production_order.manufacturing_ids.ids)
+                ])
+                processes.unlink()
                 production_order.manufacturing_ids.write({
                 'phase': 'not_assigned',
                 'production_order_id': False,
                 'status': 'pending',
                 'start_date': False,
                 'end_date': False
-            })
+                })
     
         return super(Production_order, self).unlink()
     
