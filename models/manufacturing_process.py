@@ -6,8 +6,8 @@ class Manufacturing_process(models.Model):
     _name = 'stage_sec_production.manufacturing_process'
     _description = 'Manufacturing process'
         
-    start_date = fields.Date(string = "Start date", required=True)
-    end_date = fields.Date(string = "End date", required=True)
+    start_date = fields.Date(string = "Start date")
+    end_date = fields.Date(string = "End date")
     notes = fields.Char(string = "Manufacturing process notes")
 
     manufacturing_id = fields.Many2one('stage_sec_production.manufacturing')
