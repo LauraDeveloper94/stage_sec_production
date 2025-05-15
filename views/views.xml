@@ -461,6 +461,13 @@
                     string="Avanzar fase"
                     class="oe_highlight"
                     attrs="{'invisible': [('status', '!=', 'in_progress')]}"/>
+
+            <button name="action_view_manufacturing_processes"
+                    string="Ver procesos"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': [('status', '!=', 'finished')]}"/>
+            
             
             <field name="status" widget="statusbar" statusbar_visible="not_started,in_progress,finished"/>
           </header>
@@ -529,6 +536,12 @@
       <field name="model">stage_sec_production.machinery</field>
       <field name="arch" type="xml">
         <form>
+          <header>          
+            <button name="action_get_machine_data"
+                    type="object"
+                    string="Actualizar cantidades"
+                    class="oe_highlight"/>
+          </header>
           <group col="2">
             <group string="Datos máquina">
               <field name="name"/>
