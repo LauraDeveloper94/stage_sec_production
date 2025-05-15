@@ -19,6 +19,7 @@ class Manufacturing(models.Model):
         ('assembling', 'assembling'),
         ('welding', 'welding'),
         ('painting', 'painting'),
+        ('completed', 'completed'), 
     ], string="Phase", required=True)
     start_date = fields.Date(string = "Start date")
     end_date = fields.Date(string = "End date")
@@ -59,18 +60,5 @@ class Manufacturing(models.Model):
         for i in self:
             if i.quantity < 0:
                 raise ValidationError("Quantity cannot be negative.")
-            
-    def cron_get_all_machinery_data(self):
-        machinery_types = ["cut", "assembly", "welding", "paint"]
-        for m_type in machinery_types:
-            try:
-                url = f"http://localhost:5000/machineryData/{m_type}"
-                response = requests.get(url)
-                if response.status_code == 200:
-                    data = response.json()
-                    _logger.info("Received data for '%s': %s", m_type, data)
-                else:
-                    _logger.error("Error from obtaining data from '%s': %s", m_type, response.status_code)
-            except Exception as e:
-                _logger.exception("Error from obtaining data from '%s': %s", m_type, e)
+
     
