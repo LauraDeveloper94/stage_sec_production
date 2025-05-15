@@ -286,7 +286,7 @@
             <field name="name">SUPERVISOR access employee</field>
             <field name="model_id" ref="model_stage_sec_production_employee"/>
             <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
-            <field name="perm_read" eval="0"/>
+            <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
@@ -296,7 +296,7 @@
             <field name="name">SUPERVISOR access client</field>
             <field name="model_id" ref="model_stage_sec_production_client"/>
             <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
-            <field name="perm_read" eval="0"/>
+            <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
@@ -306,7 +306,7 @@
             <field name="name">SUPERVISOR access supplier</field>
             <field name="model_id" ref="model_stage_sec_production_supplier"/>
             <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
-            <field name="perm_read" eval="0"/>
+            <field name="perm_read" eval="1"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
@@ -317,9 +317,9 @@
             <field name="model_id" ref="model_stage_sec_production_manufacturing"/>
             <field name="group_id" ref="stage_sec_production.group_SUPERVISOR"/>
             <field name="perm_read" eval="1"/>
-            <field name="perm_write" eval="1"/>
-            <field name="perm_create" eval="1"/>
-            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
         </record>
 
         <record id="access_stage_sec_production_department_SUPERVISOR" model="ir.model.access">
@@ -487,7 +487,7 @@
             <field name="name">OPERATOR access inventory</field>
             <field name="model_id" ref="model_stage_sec_production_inventory"/>
             <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
-            <field name="perm_read" eval="1"/>
+            <field name="perm_read" eval="0"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
@@ -517,7 +517,7 @@
             <field name="name">OPERATOR access manufacturing process</field>
             <field name="model_id" ref="model_stage_sec_production_manufacturing_process"/>
             <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
-            <field name="perm_read" eval="1"/>
+            <field name="perm_read" eval="0"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
@@ -537,7 +537,7 @@
             <field name="name">OPERATOR access quality control</field>
             <field name="model_id" ref="model_stage_sec_production_quality_control"/>
             <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
-            <field name="perm_read" eval="1"/>
+            <field name="perm_read" eval="0"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
@@ -557,7 +557,7 @@
             <field name="name">OPERATOR access product</field>
             <field name="model_id" ref="model_stage_sec_production_product"/>
             <field name="group_id" ref="stage_sec_production.group_OPERATOR"/>
-            <field name="perm_read" eval="1"/>
+            <field name="perm_read" eval="0"/>
             <field name="perm_write" eval="0"/>
             <field name="perm_create" eval="0"/>
             <field name="perm_unlink" eval="0"/>
