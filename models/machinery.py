@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+import requests
+import logging
+_logger = logging.getLogger(__name__)
+
 
 class Machinery(models.Model):
     
@@ -15,7 +19,7 @@ class Machinery(models.Model):
         ('welding', 'welding'),
         ('paint', 'paint')
     ], string="Tipo", required=True)
-    product_qty = fields.Float(string="Cantidad de producto")
+    product_qty = fields.Integer(string="Cantidad de producto")
     status = fields.Char(string = "Status", required=True, size=50) 
     installation_date = fields.Date(string = "Installation date", required=True)
     next_maintenance_date = fields.Date(string = "Next maintenance date", required=True)
@@ -38,4 +42,36 @@ class Machinery(models.Model):
                 if i.installation_date > i.last_maintenance_date:
                     raise ValidationError("The installation date must be earlier than the last maintenance date.")
 
+    def action_get_machine_data(self):
+        self.ensure_one()
+        self.cron_get_all_machinery_data()
+    
+    def cron_get_all_machinery_data(self):
 
+        machine_and_key = {
+            "Assembly": "assembly",
+            "Cutting Saw": "cutting",
+            "Painter": "painting",
+            "MIG Welder": "welding"
+        }
+
+        base_url = 'http://host.docker.internal:5000/machineryData/data'
+
+        for machinery in self:
+            machine_key = machine_and_key.get(machinery.name)
+            if not machine_key:
+                _logger.warning("No API key found for machinery name: %s", machinery.name)
+                continue
+
+            url = f'{base_url}/{machine_key}'
+
+            try:
+                response = requests.get(url)
+                if response.status_code == 200:
+                    data = response.json()
+                    machinery.write({'product_qty': data['production']})
+                else:
+                    raise ValidationError(f"Failed to fetch data for {machinery.name}: {response.status_code}")
+            except requests.exceptions.RequestException as e:
+                raise ValidationError(f"Error connecting to API for {machinery.name}: {e}")
+            
